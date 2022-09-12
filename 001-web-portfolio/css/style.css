@@ -1,3 +1,4 @@
+/* Mobile Mode */
 * {
     padding: 0;
     margin: 0;
@@ -8,7 +9,6 @@
 }
 
 /* Header */
-
 header {
     display: flex;
     justify-content: space-between;
@@ -73,7 +73,7 @@ fieldset {
 }
 
 #about-me {
-    padding: 42px 10px;
+    padding: 32px 10px;
     background-color: rgb(189, 235, 235);
 }
 
@@ -109,13 +109,15 @@ fieldset {
     flex-wrap: wrap;
     padding: 42px 10px;
     font-size: 32px;
+    justify-content: center;
+    align-items: center;
 }
 
 .projects div {
     color: rgb(189, 235, 235);
 }
 
-.projects button {
+button {
     color: black;
     background-color: whitesmoke;
     border: 1px solid darkslategray;
@@ -130,6 +132,7 @@ fieldset {
 
 .project-1, .project-2, .project-3 {
     padding: 10px;
+    text-align: center;
 }
 
 .project-description {
@@ -137,21 +140,23 @@ fieldset {
 }
 
 /* Skills */
-
 #skills {
     height: fit-content;
     color: darkslategray;
     padding: 42px 10px;
     background-color: rgb(189, 235, 235);
     font-size: 32px;
+    font-weight: bold;
 }
 
 .git, .html, .css {
     color: darkslategray;
+    font-size: 24px;
 }
 
 .javascript, .mongodb, .express, .react, .node {
     color: lightslategray;
+    font-size: 24px;
 }
 
 .skill-container {
@@ -160,5 +165,22 @@ fieldset {
     padding: 10px;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
+    text-align: center;
+}
+
+/*  Tablet Mode */
+@media only screen and (min-width: 768px) and (max-width: 991px){
+/* if the screen has width from 768 to 991px*/
+
+
+
+
+}
+  
+
+/* Laptop/Desktop Mode */
+@media only screen and (max-width: 767px){ 
+/* if the screen has width >= 992px*/
+
 }
