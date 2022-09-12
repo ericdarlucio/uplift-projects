@@ -72,6 +72,11 @@ fieldset {
     font-weight: bold;
 }
 
+#about-me {
+    padding: 42px 10px;
+    background-color: rgb(189, 235, 235);
+}
+
 .profession {
     font-size: 24px;
 }
@@ -80,7 +85,6 @@ fieldset {
     height: fit-content;
     color: darkslategray;
     padding: 10px;
-    background-color: rgb(189, 235, 235);
 }
 
 .logo-container {
@@ -104,6 +108,7 @@ fieldset {
     flex-direction: row;
     flex-wrap: wrap;
     padding: 42px 10px;
+    font-size: 32px;
 }
 
 .projects div {
@@ -120,9 +125,40 @@ fieldset {
 }
 
 .project-title {
-    font-size: 32px;
+    font-size: 24px;
 }
 
 .project-1, .project-2, .project-3 {
     padding: 10px;
+}
+
+.project-description {
+    font-size: 14px;
+}
+
+/* Skills */
+
+#skills {
+    height: fit-content;
+    color: darkslategray;
+    padding: 42px 10px;
+    background-color: rgb(189, 235, 235);
+    font-size: 32px;
+}
+
+.git, .html, .css {
+    color: darkslategray;
+}
+
+.javascript, .mongodb, .express, .react, .node {
+    color: lightslategray;
+}
+
+.skill-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
