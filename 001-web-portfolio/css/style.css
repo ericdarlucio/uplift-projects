@@ -5,7 +5,8 @@
     font-family: Rockwell;
     list-style: none;
     text-decoration: none;
-    color: rgb(236, 234, 216);
+    color: rgb(193, 220, 228);
+
 }
 
 /* Header */
@@ -19,7 +20,7 @@ header {
     top: 0;
 }
 
-.home {
+#home {
     width: fit-content;
     height: auto;
     font-size: 34px;
@@ -41,7 +42,7 @@ footer {
     align-items: center;
     background-color: darkslategray;
     height: fit-content;
-    padding: 42px 10px;
+    padding: 60px 10px;
     gap: 10px;
 }
 
@@ -73,7 +74,7 @@ fieldset {
 }
 
 #about-me {
-    padding: 32px 10px;
+    padding: 60px 10px;
     background-color: rgb(189, 235, 235);
 }
 
@@ -107,14 +108,10 @@ fieldset {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 42px 10px;
+    padding: 60px 10px;
     font-size: 32px;
     justify-content: center;
     align-items: center;
-}
-
-.projects div {
-    color: rgb(189, 235, 235);
 }
 
 button {
@@ -143,14 +140,22 @@ button {
 #skills {
     height: fit-content;
     color: darkslategray;
-    padding: 42px 10px;
+    padding: 60px 10px;
     background-color: rgb(189, 235, 235);
     font-size: 32px;
     font-weight: bold;
 }
 
-.git, .html, .css {
-    color: darkslategray;
+.git {
+    color: rgb(241, 82, 51);
+}
+
+.html {
+    color: rgb(241, 73, 11)
+} 
+
+.css {
+    color: rgb(33, 150, 243);
     font-size: 24px;
 }
 
@@ -172,8 +177,9 @@ button {
 /*  Tablet Mode */
 @media only screen and (min-width: 768px) and (max-width: 991px){
 /* if the screen has width from 768 to 991px*/
-
-
+header {
+    padding: 10px 50px;
+}
 
 
 }
