@@ -4,7 +4,7 @@
     font-family: Rockwell;
     list-style: none;
     text-decoration: none;
-    color: white;
+    color: rgb(236, 234, 216);
 }
 
 /* Header */
@@ -35,7 +35,8 @@ nav {
 /* Footer */
 footer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background-color: darkslategray;
@@ -47,6 +48,7 @@ footer {
 textarea, input {
     color: black;
     width: 100%;
+    resize: none;
 }
 
 fieldset {
@@ -55,4 +57,35 @@ fieldset {
 
 .my-contact {
     text-align: none;
+    order: 1;
+    width: 100%;
+}
+
+.contact-us {
+    width: 100%;
+    padding: 10px;
+}
+
+/* Main */
+
+
+.about-me > div {
+    height: fit-content;
+    color: darkslategray;
+    padding: 10px;
+    background-color: rgb(189, 235, 235);
+}
+
+.logo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.logo-container img {
+    width: 40px;
+    height: 40px;
+    flex: 0;
+    padding: 0 10px;
 }
