@@ -193,7 +193,7 @@ footer {
 
 textarea,
 input {
-  color: rgb(79, 189, 186);
+  color: rgb(7, 34, 39);
   width: 100%;
   resize: none;
 }
@@ -211,10 +211,6 @@ fieldset {
 .contact-us {
   width: 100%;
   padding: 10px;
-}
-
-form {
-  color: rgb(79, 189, 186);
 }
 
 /*  Tablet Mode */
