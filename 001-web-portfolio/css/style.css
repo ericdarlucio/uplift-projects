@@ -38,40 +38,6 @@ nav {
   transition: 0.5s;
 }
 
-/* Footer */
-footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  background-color: darkslategray;
-  height: fit-content;
-  padding: 60px 10px;
-  gap: 10px;
-}
-
-textarea,
-input {
-  color: rgb(51, 42, 42);
-  width: 100%;
-  resize: none;
-}
-
-fieldset {
-  padding: 10px 20px;
-}
-
-.my-contact {
-  order: 1;
-  width: 100%;
-  text-align: center;
-}
-
-.contact-us {
-  width: 100%;
-  padding: 10px;
-}
-
 /* About Me */
 #introduction {
   font-size: 32px;
@@ -162,6 +128,12 @@ button > img {
   font-size: 14px;
 }
 
+.my-projects {
+  width: 100%;
+  color: rgb(193, 220, 228);
+  text-align: center;
+}
+
 /* Skills */
 #skills {
   height: fit-content;
@@ -202,6 +174,46 @@ button > img {
   align-items: center;
   gap: 30px;
   text-align: center;
+}
+
+.my-skills {
+  width: 100%;
+  color: rgb(51, 42, 42);
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: darkslategray;
+  height: fit-content;
+  padding: 60px 10px;
+  gap: 10px;
+}
+
+textarea,
+input {
+  color: rgb(51, 42, 42);
+  width: 100%;
+  resize: none;
+}
+
+fieldset {
+  padding: 10px 20px;
+}
+
+.my-contact {
+  order: 1;
+  width: 100%;
+  text-align: center;
+}
+
+.contact-us {
+  width: 100%;
+  padding: 10px;
 }
 
 /*  Tablet Mode */
