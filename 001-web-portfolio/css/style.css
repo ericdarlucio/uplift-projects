@@ -255,10 +255,14 @@ fieldset {
     width: 40%;
   }
 
+  #contact {
+    padding: 60px 50px;
+  }
+
   .my-contact {
     order: 0;
     width: 50%;
-    font-size: 24px;
+    font-size: 22px;
     margin-right: 20px;
     text-align: left;
   }
@@ -288,10 +292,14 @@ fieldset {
     width: 40%;
   }
 
+  #contact {
+    padding: 60px 100px;
+  }
+
   .my-contact {
     order: 0;
     width: 50%;
-    font-size: 24px;
+    font-size: 30px;
     margin-right: 20px;
     text-align: left;
   }
