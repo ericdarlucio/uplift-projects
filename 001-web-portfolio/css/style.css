@@ -1,293 +1,313 @@
 /* Mobile Mode */
 * {
-    padding: 0;
-    margin: 0;
-    font-family: Rockwell;
-    list-style: none;
-    text-decoration: none;
-    color: rgb(193, 220, 228);
+  padding: 0;
+  margin: 0;
+  font-family: Rockwell;
+  list-style: none;
+  text-decoration: none;
+  color: rgb(193, 220, 228);
 }
 
 /* Header */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: darkslategray;
-    padding: 5px;
-    position: sticky;
-    top: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(47, 79, 79);
+  padding: 5px;
+  position: sticky;
+  top: 0px;
 }
 
 #home {
-    height: auto;
-    font-size: 34px;
+  height: auto;
+  font-size: 34px;
 }
 
 nav {
-    display: flex;
-    gap: 10px;
-    font-size: 18px;
+  display: flex;
+  gap: 10px;
+  font-size: 18px;
 }
 
-.nav-projects:hover, .nav-skills:hover, .nav-contact:hover, #home:hover {
-    text-decoration: underline;
-    transition: 0.5s;
+.nav-projects:hover,
+.nav-skills:hover,
+.nav-contact:hover,
+#home:hover {
+  text-decoration: underline;
+  transition: 0.5s;
 }
 
 /* Footer */
 footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background-color: darkslategray;
-    height: fit-content;
-    padding: 60px 10px;
-    gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: darkslategray;
+  height: fit-content;
+  padding: 60px 10px;
+  gap: 10px;
 }
 
-textarea, input {
-    color: rgb(51, 42, 42);
-    width: 100%;
-    resize: none;
+textarea,
+input {
+  color: rgb(51, 42, 42);
+  width: 100%;
+  resize: none;
 }
 
 fieldset {
-    padding: 10px 20px;
+  padding: 10px 20px;
 }
 
 .my-contact {
-    order: 1;
-    width: 100%;
-    text-align: center;
+  order: 1;
+  width: 100%;
+  text-align: center;
 }
 
 .contact-us {
-    width: 100%;
-    padding: 10px;
+  width: 100%;
+  padding: 10px;
 }
 
 /* About Me */
 #introduction {
-    font-size: 32px;
-    font-weight: bold;
+  font-size: 32px;
+  font-weight: bold;
 }
 
 #about-me {
-    padding: 50px 10px;
-    background-color: rgb(189, 235, 235);
+  padding: 50px 10px;
+  background-color: rgb(189, 235, 235);
 }
 
 .profession {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 #about-me > div {
-    height: fit-content;
-    color: darkslategray;
-    padding: 10px;
+  height: fit-content;
+  color: rgb(47, 79, 79);
+  padding: 10px;
 }
 
 .logo-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
 }
 
 .logo-container img {
-    flex: 0;
-    padding: 0 10px;
+  flex: 0;
+  padding: 0 10px;
+}
+
+.resume:hover,
+.github:hover,
+.linkedin:hover {
+  position: relative;
+  bottom: 2px;
 }
 
 /* Projects */
 #projects {
-    background-color: slategray;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 60px 10px;
-    font-size: 32px;
-    justify-content: center;
-    align-items: center;
+  background-color: slategray;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 60px 10px;
+  font-size: 32px;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
-    background-color: rgb(189, 235, 235);
-    border: 1px solid darkslategray;
-    padding: 2px 10px;
-    text-align: center;
-    border-radius: 5px;
+  background-color: rgb(189, 235, 235);
+  border: 1px solid rgb(47, 79, 79);
+  padding: 2px 10px;
+  text-align: center;
+  border-radius: 5px;
 }
 
 button > a {
-    color: rgb(51, 42, 42);
+  color: rgb(51, 42, 42);
 }
 
 button:hover {
-    text-decoration: underline;
-    transition: 0.5s;
+  text-decoration: underline;
+  transition: 0.5s;
 }
 
 button > img {
-    margin-left: 2px;
+  margin-left: 2px;
 }
-
 
 .project-title {
-    font-size: 24px;
-    margin-bottom: 10px;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-.project-1, .project-2, .project-3, .project-4 {
-    padding: 10px;
-    text-align: center;
+.project-1,
+.project-2,
+.project-3,
+.project-4 {
+  padding: 10px;
+  text-align: center;
 }
 
 .project-description {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 /* Skills */
 #skills {
-    height: fit-content;
-    color: darkslategray;
-    padding: 60px 10px;
-    background-color: rgb(189, 235, 235);
-    font-size: 32px;
-    font-weight: bold;
+  height: fit-content;
+  color: rgb(47, 79, 79);
+  padding: 60px 10px;
+  background-color: rgb(189, 235, 235);
+  font-size: 32px;
+  font-weight: bold;
 }
 
 .git {
-    color: rgb(241, 82, 51);
+  color: rgb(241, 82, 51);
 }
 
 .html {
-    color: rgb(241, 73, 11)
-} 
-
-.css {
-    color: rgb(33, 150, 243);
-    font-size: 24px;
+  color: rgb(241, 73, 11);
 }
 
-.javascript, .mongodb, .express, .react, .node {
-    color: lightslategray;
-    font-size: 24px;
+.css {
+  color: rgb(33, 150, 243);
+  font-size: 24px;
+}
+
+.javascript,
+.mongodb,
+.express,
+.react,
+.node {
+  color: rgb(119, 136, 153);
+  font-size: 24px;
 }
 
 .skill-container {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
 }
 
 /*  Tablet Mode */
-@media only screen and (min-width: 768px) and (max-width: 991px){
-/* if the screen has width from 768 to 991px*/
-* {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* if the screen has width from 768 to 991px*/
+  * {
     padding: 0;
     margin: 0;
-}
+  }
 
-header {
+  header {
     padding: 10px 50px;
-}
+  }
 
-#about-me {
+  #about-me {
     padding: 60px 50px;
-}
+  }
 
-#projects {
+  #projects {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     box-sizing: content-box;
     justify-content: center;
     align-items: center;
-}
+  }
 
-.project-1, .project-2, .project-3, .project-4 {
+  .project-1,
+  .project-2,
+  .project-3,
+  .project-4 {
     width: 40%;
-}
+  }
 
-#contact {
+  #contact {
     justify-content: center;
     align-items: center;
     flex-direction: row;
     text-align: center;
-}
+  }
 
-.my-contact {
+  .my-contact {
     order: 0;
     width: 50%;
     font-size: 24px;
     margin-right: 20px;
-}   
+  }
 
-.contact-us {
+  .contact-us {
     order: 1;
     width: 40%;
+  }
 }
-
-}
-  
 
 /* Laptop/Desktop Mode */
-@media only screen and (min-width: 992px){ 
-/* if the screen has width >= 992px*/
-* {
+@media only screen and (min-width: 992px) {
+  /* if the screen has width >= 992px*/
+  * {
     padding: 0;
     margin: 0;
-}
+  }
 
-header {
+  header {
     padding: 10px 100px;
-}
+  }
 
-#about-me {
+  #about-me {
     padding: 60px 100px;
-}
+  }
 
-#projects {
+  #projects {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     box-sizing: content-box;
     justify-content: center;
     align-items: center;
-}
+  }
 
-.project-1, .project-2, .project-3, .project-4 {
+  .project-1,
+  .project-2,
+  .project-3,
+  .project-4 {
     width: 40%;
-}
+  }
 
-#contact {
+  #contact {
     justify-content: center;
     align-items: center;
     flex-direction: row;
     text-align: center;
-}
+  }
 
-.my-contact {
+  .my-contact {
     order: 0;
     width: 50%;
     font-size: 24px;
     margin-right: 20px;
-}   
+  }
 
-.contact-us {
+  .contact-us {
     order: 1;
     width: 40%;
-}
+  }
 
-.skill-container {
+  .skill-container {
     padding: 60px 100px;
-}
-
+  }
 }
