@@ -5,7 +5,7 @@
   font-family: Rockwell;
   list-style: none;
   text-decoration: none;
-  color: rgb(193, 220, 228);
+  color:rgb(174, 254, 255);
 }
 
 /* Header */
@@ -13,7 +13,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(47, 79, 79);
+  background-color: rgb(7, 34, 39);
   padding: 5px;
   position: sticky;
   top: 0px;
@@ -38,13 +38,13 @@ nav {
 
 /* About Me */
 #introduction {
-  font-size: 32px;
   font-weight: bold;
+  font-size: 42px;
 }
 
 #about-me {
   padding: 50px 10px;
-  background-color: rgb(189, 235, 235);
+  background: linear-gradient(60deg, rgb(53, 133, 139), rgb(7, 34, 39));
 }
 
 .profession {
@@ -52,7 +52,7 @@ nav {
 }
 
 #about-me > div {
-  color: rgb(47, 79, 79);
+  color:rgb(174, 254, 255);
   padding: 10px;
 }
 
@@ -77,7 +77,7 @@ nav {
 
 /* Projects */
 #projects {
-  background-color: rgb(47, 79, 79);
+  background-color: rgb(7, 34, 39);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -89,15 +89,15 @@ nav {
 }
 
 button {
-  background-color: rgb(189, 235, 235);
-  border: 1px solid rgb(47, 79, 79);
-  padding: 2px 4px;
+  background-color: rgb(53, 133, 139);
+  border: 1px solid rgb(174, 254, 255);
+  padding: 2px 10px;
   text-align: center;
   border-radius: 5px;
 }
 
 button > a {
-  color: rgb(51, 42, 42);
+  color: rgb(174, 254, 255);
 }
 
 button:hover {
@@ -127,7 +127,7 @@ button > img {
 
 .my-projects {
   width: 100%;
-  color: rgb(193, 220, 228);
+  color: rgb(174, 254, 255);
   text-align: center;
   font-weight: bold;
 }
@@ -135,7 +135,7 @@ button > img {
 /* Skills */
 #skills {
   padding: 60px 10px;
-  background-color: rgb(189, 235, 235);
+  background: linear-gradient(60deg, rgb(53, 133, 139), rgb(7, 34, 39));
   font-size: 32px;
 }
 
@@ -157,7 +157,7 @@ button > img {
 .express,
 .react,
 .node {
-  color: rgb(119, 136, 153);
+  color: rgb(79, 189, 186);
   font-size: 24px;
 }
 
@@ -166,16 +166,17 @@ button > img {
   flex-wrap: wrap;
   padding: 10px;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
   gap: 30px;
   text-align: center;
 }
 
 .my-skills {
   width: 100%;
-  color: rgb(51, 42, 42);
+  color: rgb(174, 254, 255);
   text-align: center;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 /* Footer */
@@ -184,7 +185,7 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: darkslategray;
+  background-color: rgb(7, 34, 39);
   height: fit-content;
   padding: 60px 10px;
   gap: 10px;
@@ -192,7 +193,7 @@ footer {
 
 textarea,
 input {
-  color: rgb(51, 42, 42);
+  color: rgb(79, 189, 186);
   width: 100%;
   resize: none;
 }
@@ -210,6 +211,10 @@ fieldset {
 .contact-us {
   width: 100%;
   padding: 10px;
+}
+
+form {
+  color: rgb(79, 189, 186);
 }
 
 /*  Tablet Mode */
