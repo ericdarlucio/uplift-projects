@@ -6,7 +6,6 @@
     list-style: none;
     text-decoration: none;
     color: rgb(193, 220, 228);
-
 }
 
 /* Header */
@@ -15,28 +14,30 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: darkslategray;
-    padding: 10px;
+    padding: 5px;
     position: sticky;
-    top: 0;
+    top: 0px;
 }
 
 #home {
-    width: fit-content;
     height: auto;
     font-size: 34px;
 }
 
 nav {
     display: flex;
-    flex-direction: row;
     gap: 10px;
     font-size: 18px;
+}
+
+.nav-projects:hover, .nav-skills:hover, .nav-contact:hover, #home:hover {
+    text-decoration: underline;
+    transition: 0.5s;
 }
 
 /* Footer */
 footer {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -47,19 +48,19 @@ footer {
 }
 
 textarea, input {
-    color: black;
+    color: rgb(51, 42, 42);
     width: 100%;
     resize: none;
 }
 
 fieldset {
-    padding: 10px;
+    padding: 10px 20px;
 }
 
 .my-contact {
-    text-align: none;
     order: 1;
     width: 100%;
+    text-align: center;
 }
 
 .contact-us {
@@ -74,7 +75,7 @@ fieldset {
 }
 
 #about-me {
-    padding: 60px 10px;
+    padding: 50px 10px;
     background-color: rgb(189, 235, 235);
 }
 
@@ -96,8 +97,6 @@ fieldset {
 }
 
 .logo-container img {
-    width: 40px;
-    height: 40px;
     flex: 0;
     padding: 0 10px;
 }
@@ -115,19 +114,30 @@ fieldset {
 }
 
 button {
-    color: black;
-    background-color: whitesmoke;
+    color: rgb(51, 42, 42);
+    background-color: rgb(189, 235, 235);
     border: 1px solid darkslategray;
     padding: 2px 10px;
     text-align: center;
     border-radius: 5px;
 }
 
-.project-title {
-    font-size: 24px;
+button:hover {
+    text-decoration: underline;
+    transition: 0.5s;
 }
 
-.project-1, .project-2, .project-3 {
+button > img {
+    margin-left: 2px;
+}
+
+
+.project-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.project-1, .project-2, .project-3, .project-4 {
     padding: 10px;
     text-align: center;
 }
@@ -177,16 +187,104 @@ button {
 /*  Tablet Mode */
 @media only screen and (min-width: 768px) and (max-width: 991px){
 /* if the screen has width from 768 to 991px*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
 header {
     padding: 10px 50px;
 }
 
+#about-me {
+    padding: 60px 50px;
+}
+
+#projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: content-box;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-1, .project-2, .project-3, .project-4 {
+    width: 40%;
+}
+
+#contact {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+}
+
+.my-contact {
+    order: 0;
+    width: 50%;
+    font-size: 24px;
+    margin-right: 20px;
+}   
+
+.contact-us {
+    order: 1;
+    width: 40%;
+}
 
 }
   
 
 /* Laptop/Desktop Mode */
-@media only screen and (max-width: 767px){ 
+@media only screen and (min-width: 992px){ 
 /* if the screen has width >= 992px*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    padding: 10px 100px;
+}
+
+#about-me {
+    padding: 60px 100px;
+}
+
+#projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: content-box;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-1, .project-2, .project-3, .project-4 {
+    width: 40%;
+}
+
+#contact {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+}
+
+.my-contact {
+    order: 0;
+    width: 50%;
+    font-size: 24px;
+    margin-right: 20px;
+}   
+
+.contact-us {
+    order: 1;
+    width: 40%;
+}
+
+.skill-container {
+    padding: 60px 100px;
+}
 
 }

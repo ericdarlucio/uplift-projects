@@ -7,21 +7,22 @@
     <title>Project 1</title>
     <link rel='stylesheet' href='css/style.css'>
 </head>
-<body>        
+<body id='body'>    
+
     <header>
         <!-- This div will contain home logo -->
         <div id='home'>
-            <a href='#about-me'>JD
+            <a href='#body'>JD
         </div>
         <!-- This nav element will contain my navigation links -->
         <nav>
-                <div>
+                <div class='nav-projects'>
                     <a href='#projects'>projects</a>
                 </div>
-                <div>
+                <div class='nav-skills'>
                     <a href='#skills'>skills</a>
                 </div>
-                <div>
+                <div class='nav-contact'>
                     <a href='#contact'>contact</a>
                 </div>
         </nav>
@@ -35,27 +36,24 @@
             <div class='description'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates libero molestiae ipsa impedit accusantium magnam eos. Consequuntur corporis, quia quaerat quas fugit beatae, mollitia illum laboriosam rem ratione, ex cupiditate?</div>
             <div class='logo-container'>
                 <div class='resume'>
-                    <img src="images/resume.png" alt="Resume Icon">
+                    <img width='40px' height='40px' src="images/resume.png" alt="Resume Icon">
                 </div>
                 <div class='github'></div>
-                    <img src="images/github.png" alt="Github Logo">
+                    <img width='40px' height='40px' src="images/github.png" alt="Github Logo">
                 <div class='linkedin'>
-                    <img src="images/linkedin.png" alt="LinkedIn Logo">
+                    <img width='40px' height='40px' src="images/linkedin.png" alt="LinkedIn Logo">
                 </div>
             </div>
         </section>
 
-        <hr>
-
         <section id='projects'>
-            <div>PROJECTS</div>
             <div class='project-1'>
                 <div class='project-title'>Project 1</div>
                 <div class='project-image'>
                     <img width='100px' height='100px' src="images/wip.png" alt="WIP Icon">
                 </div>
                 <div class='project-description'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi cupiditate expedita quis explicabo assumenda quasi reiciendis fugit corrupti suscipit ipsa, dolor illum optio sapiente quia dicta autem ex, omnis voluptatum?</div>
-                <button>Live <img width='14px' height='14px' src="https://cdn-icons-png.flaticon.com/512/2838/2838908.png" alt=""></button>
+                <button>Live<img width='14px' height='14px' src="images/link.png" alt="Link Icon"></button>
             </div>
             <div class='project-2'>
                 <div class='project-title'>Project 2</div>
@@ -63,7 +61,7 @@
                     <img width='100px' height='100px' src="images/wip.png" alt="WIP Icon">
                 </div>
                 <div class='project-description'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi cupiditate expedita quis explicabo assumenda quasi reiciendis fugit corrupti suscipit ipsa, dolor illum optio sapiente quia dicta autem ex, omnis voluptatum?</div>
-                <button>Live <img width='14px' height='14px' src="https://cdn-icons-png.flaticon.com/512/2838/2838908.png" alt=""></button>
+                <button>Live<img width='14px' height='14px' src="images/link.png" alt="Link Icon"></button>
             </div>
             <div class='project-3'>
                 <div class='project-title'>Project 3</div>
@@ -71,15 +69,19 @@
                     <img width='100px' height='100px' src="images/wip.png" alt="WIP Icon">
                 </div>
                 <div class='project-description'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi cupiditate expedita quis explicabo assumenda quasi reiciendis fugit corrupti suscipit ipsa, dolor illum optio sapiente quia dicta autem ex, omnis voluptatum?</div>
-                <button>Live <img width='14px' height='14px' src="https://cdn-icons-png.flaticon.com/512/2838/2838908.png" alt=""></button>
+                <button>Live<img width='14px' height='14px' src="images/link.png" alt="Link Icon"></button>
             </div>
-
+            <div class='project-4'>
+                <div class='project-title'>Project 4</div>
+                <div class='project-image'>
+                    <img width='100px' height='100px' src="images/wip.png" alt="WIP Icon">
+                </div>
+                <div class='project-description'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi cupiditate expedita quis explicabo assumenda quasi reiciendis fugit corrupti suscipit ipsa, dolor illum optio sapiente quia dicta autem ex, omnis voluptatum?</div>
+                <button>Live<img width='14px' height='14px' src="images/link.png" alt="Link Icon"></button>
+            </div>
         </section>
 
-        <hr>
-
-        <section id='skills'>SKILLS
-
+        <section id='skills'>
             <div class='skill-container'>
                 <div class='git'>
                     <img width='50px' height='50px' src="images/git.png" alt="Git Logo"><br>
@@ -106,7 +108,6 @@
                     <img width='50px' height='50px' src="images/nodejs.png" alt="NodeJS Logo"><br>
                     Node</div>
             </div>
-
         </section>
     </main>
 
@@ -144,5 +145,6 @@
             </fieldset>
         </div>
     </footer>
+
 </body>
 </html>
