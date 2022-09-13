@@ -14,7 +14,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: rgb(7, 34, 39);
-  padding: 5px;
+  padding: 10px;
   position: sticky;
   top: 0px;
 }
@@ -44,7 +44,7 @@ nav {
 
 #about-me {
   padding: 50px 10px;
-  background: linear-gradient(60deg, rgb(53, 133, 139), rgb(7, 34, 39));
+  background-color: rgb(7, 34, 39);
 }
 
 .profession {
@@ -77,7 +77,7 @@ nav {
 
 /* Projects */
 #projects {
-  background-color: rgb(7, 34, 39);
+  background: linear-gradient(160deg, rgb(7, 34, 39), rgb(53, 133, 139));
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -135,7 +135,7 @@ button > img {
 /* Skills */
 #skills {
   padding: 60px 10px;
-  background: linear-gradient(60deg, rgb(53, 133, 139), rgb(7, 34, 39));
+  background: linear-gradient(350deg, rgb(7, 34, 39), rgb(53, 133, 139));
   font-size: 32px;
 }
 
@@ -193,22 +193,28 @@ footer {
 
 textarea,
 input {
-  color: rgb(2, 36, 42);
+  color: rgb(174, 254, 255);
   width: 100%;
   resize: none;
-  background-color: rgb(137, 188, 192);
+  background-color: rgba(255, 255, 255, 0);
+  border-color: rgb(174, 254, 255);
 }
 
 input[type='submit'] {
-  color: rgb(7, 34, 39);
+  color: rgb(174, 254, 255);
   width: fit-content;
   padding: 5px;
-  border: 0;
+  border-color: rgb(174, 254, 255);
+}
+
+input[type='submit']:hover {
+  cursor: pointer ;
 }
 
 ::placeholder {
-  color:rgb(234, 250, 250);
+  color: rgb(133, 177, 179);
 }
+
 
 fieldset {
   padding: 10px 20px;
