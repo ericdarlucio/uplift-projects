@@ -20,7 +20,6 @@ header {
 }
 
 #home {
-  height: auto;
   font-size: 34px;
 }
 
@@ -35,7 +34,6 @@ nav {
 .nav-contact:hover,
 #home:hover {
   text-decoration: underline;
-  transition: 0.5s;
 }
 
 /* About Me */
@@ -54,7 +52,6 @@ nav {
 }
 
 #about-me > div {
-  height: fit-content;
   color: rgb(47, 79, 79);
   padding: 10px;
 }
@@ -80,7 +77,7 @@ nav {
 
 /* Projects */
 #projects {
-  background-color: slategray;
+  background-color: rgb(112, 128, 144);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -88,12 +85,13 @@ nav {
   font-size: 32px;
   justify-content: center;
   align-items: center;
+  gap: 30px;
 }
 
 button {
   background-color: rgb(189, 235, 235);
   border: 1px solid rgb(47, 79, 79);
-  padding: 2px 10px;
+  padding: 2px 4px;
   text-align: center;
   border-radius: 5px;
 }
@@ -104,7 +102,6 @@ button > a {
 
 button:hover {
   text-decoration: underline;
-  transition: 0.5s;
 }
 
 button > img {
@@ -125,23 +122,21 @@ button > img {
 }
 
 .project-description {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .my-projects {
   width: 100%;
   color: rgb(193, 220, 228);
   text-align: center;
+  font-weight: bold;
 }
 
 /* Skills */
 #skills {
-  height: fit-content;
-  color: rgb(47, 79, 79);
   padding: 60px 10px;
   background-color: rgb(189, 235, 235);
   font-size: 32px;
-  font-weight: bold;
 }
 
 .git {
@@ -180,6 +175,7 @@ button > img {
   width: 100%;
   color: rgb(51, 42, 42);
   text-align: center;
+  font-weight: bold;
 }
 
 /* Footer */
@@ -219,11 +215,6 @@ fieldset {
 /*  Tablet Mode */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   /* if the screen has width from 768 to 991px*/
-  * {
-    padding: 0;
-    margin: 0;
-  }
-
   header {
     padding: 10px 50px;
   }
@@ -232,27 +223,11 @@ fieldset {
     padding: 60px 50px;
   }
 
-  #projects {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    box-sizing: content-box;
-    justify-content: center;
-    align-items: center;
-  }
-
   .project-1,
   .project-2,
   .project-3,
   .project-4 {
     width: 40%;
-  }
-
-  #contact {
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    text-align: center;
   }
 
   .my-contact {
@@ -271,10 +246,6 @@ fieldset {
 /* Laptop/Desktop Mode */
 @media only screen and (min-width: 992px) {
   /* if the screen has width >= 992px*/
-  * {
-    padding: 0;
-    margin: 0;
-  }
 
   header {
     padding: 10px 100px;
@@ -284,27 +255,11 @@ fieldset {
     padding: 60px 100px;
   }
 
-  #projects {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    box-sizing: content-box;
-    justify-content: center;
-    align-items: center;
-  }
-
   .project-1,
   .project-2,
   .project-3,
   .project-4 {
     width: 40%;
-  }
-
-  #contact {
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    text-align: center;
   }
 
   .my-contact {
