@@ -5,7 +5,7 @@
   font-family: Rockwell;
   list-style: none;
   text-decoration: none;
-  color:rgb(174, 254, 255);
+  color: rgb(174, 254, 255);
 }
 
 /* Header */
@@ -40,6 +40,8 @@ nav {
 #introduction {
   font-weight: bold;
   font-size: 42px;
+  color: rgb(174, 254, 255);
+  padding: 10px;
 }
 
 #about-me {
@@ -49,10 +51,14 @@ nav {
 
 .profession {
   font-size: 24px;
+  color: rgb(174, 254, 255);
+  padding: 10px;
 }
 
-#about-me > div {
-  color:rgb(174, 254, 255);
+.description {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color:rgb(79, 189, 186);
   padding: 10px;
 }
 
