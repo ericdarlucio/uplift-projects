@@ -172,7 +172,7 @@ button > img {
   flex-wrap: wrap;
   padding: 10px;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
   gap: 30px;
   text-align: center;
 }
