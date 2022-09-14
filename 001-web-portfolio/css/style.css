@@ -57,7 +57,7 @@ nav {
 
 .description {
   margin-bottom: 20px;
-  font-size: 24px;
+  font-size: 18px;
   color:rgb(79, 189, 186);
   padding: 10px;
 }
@@ -170,7 +170,6 @@ button > img {
 .skill-container {
   display: flex;
   flex-wrap: wrap;
-  padding: 10px;
   justify-content: center;
   align-items: center;
   gap: 30px;
@@ -240,14 +239,18 @@ fieldset {
 /*  Tablet Mode */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   /* if the screen has width from 768 to 991px*/
+  
+  /* Header */
   header {
     padding: 10px 50px;
   }
 
+  /* About Me */
   #about-me {
     padding: 60px 50px;
   }
 
+  /* Projects */
   .project-1,
   .project-2,
   .project-3,
@@ -255,7 +258,13 @@ fieldset {
     width: 40%;
   }
 
-  #contact {
+  /* Skills */
+  .skill-container {
+    padding: 60px 55px;
+  }
+
+  /* Footer */
+  footer {
     padding: 60px 50px;
   }
 
@@ -271,20 +280,24 @@ fieldset {
     order: 1;
     width: 40%;
   }
+
 }
 
 /* Laptop/Desktop Mode */
 @media only screen and (min-width: 992px) {
   /* if the screen has width >= 992px*/
-
+  
+  /* Header */
   header {
     padding: 10px 100px;
   }
 
+  /* About Me */
   #about-me {
     padding: 60px 100px;
   }
 
+  /* Projects */
   .project-1,
   .project-2,
   .project-3,
@@ -292,14 +305,20 @@ fieldset {
     width: 40%;
   }
 
-  #contact {
+  /* Skills */
+  .skill-container {
+    padding: 50px 100px;
+  }
+  
+  /* Footer */
+  footer {
     padding: 60px 100px;
   }
 
   .my-contact {
     order: 0;
     width: 50%;
-    font-size: 26px;
+    font-size: 22px;
     margin-right: 20px;
     text-align: left;
   }
@@ -309,7 +328,4 @@ fieldset {
     width: 40%;
   }
 
-  .skill-container {
-    padding: 60px 100px;
-  }
 }
