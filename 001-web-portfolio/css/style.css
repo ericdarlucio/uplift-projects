@@ -129,6 +129,7 @@ button > img {
 
 .project-description {
   font-size: 16px;
+  color:rgb(79, 189, 186);
 }
 
 .my-projects {
@@ -223,6 +224,7 @@ input[type='submit']:hover {
 
 fieldset {
   padding: 10px 20px;
+  border-radius: 5px;
 }
 
 .my-contact {
