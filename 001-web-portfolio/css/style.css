@@ -204,12 +204,14 @@ input {
   resize: none;
   background-color: rgba(255, 255, 255, 0);
   border-color: rgb(174, 254, 255);
+  border-radius: 5px;
+  padding: 4px;
+  align-self: center;
 }
 
 input[type='submit'] {
   color: rgb(174, 254, 255);
   width: fit-content;
-  padding: 5px;
   border-color: rgb(174, 254, 255);
 }
 
@@ -221,10 +223,12 @@ input[type='submit']:hover {
   color: rgb(133, 177, 179);
 }
 
-
 fieldset {
-  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   border-radius: 5px;
+  padding: 20px;
 }
 
 .my-contact {
