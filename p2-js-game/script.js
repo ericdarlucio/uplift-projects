@@ -4,18 +4,23 @@
   // Get context
   const ctx = cvs.getContext('2d');
 
-  // Load images
+  // Load images and sounds
   let bg = new Image();
   let pipeNorth = new Image();
   let pipeSouth = new Image();
   let fg = new Image();
   let bird = new Image();
+  let fly = new Audio();
+  let scor = new Audio();
 
   bg.src = "image/bg.png";
   pipeNorth.src = "image/pipeNorth.png";
   pipeSouth.src = "image/pipeSouth.png";
   fg.src = "image/fg.png";
   bird.src = "image/bird.png";
+  fly.src = 'sound/fly.mp3';
+  scor.src = 'sound/score.mp3';
+
 
   // Some variables
   let gap = 120;
@@ -29,11 +34,13 @@
   document.addEventListener('click', moveUp);
   function moveUp() {
     bY -= 20;
+    fly.play();
   }
 
   document.addEventListener('keydown', moveUp);
   function moveUp() {
     bY -= 20;
+    fly.play();
   }
 
   // Pipe coordinates
@@ -67,6 +74,7 @@
 
       if (pipe[i].x == 10) {
         score++;
+        scor.play();
       }
 
     }
