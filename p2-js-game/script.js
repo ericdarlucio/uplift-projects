@@ -90,5 +90,4 @@
     requestAnimationFrame(draw);
     
   }
-
-  draw();
+   
