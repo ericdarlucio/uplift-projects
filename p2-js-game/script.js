@@ -37,15 +37,32 @@ function moveUp() {
   bY -= 20;
 }
 
-
-
+// Pipe coordinates
+let pipe = [];
+pipe[0] = {
+  x : cvs.width,
+  y : 0
+}
 
 // Draw images
 function draw() {
 
   ctx.drawImage(bg, 0, 0);
-  ctx.drawImage(pipeNorth, 100, 0);
-  ctx.drawImage(pipeSouth, 100, 0 + constant);
+
+  for (let i = 0; i < pipe.length; i++) {
+    ctx.drawImage(pipeNorth, pipe[i].x, pipe[i].y);
+    ctx.drawImage(pipeSouth, pipe[i].x, pipe[i].y + constant);  
+    pipe[i].x--;
+
+    if (pipe[i].x == 125) {
+      pipe.push({
+        x : cvs.width,
+        y : Math.floor(Math.random()*pipeNorth.height)-pipeNorth.height
+      });
+    }
+
+  }
+
   ctx.drawImage(fg, 0, cvs.height - fg.height);
   ctx.drawImage(bird, bX, bY);
   bY += gravity;
