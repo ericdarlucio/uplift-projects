@@ -5,6 +5,7 @@ const cvs = document.getElementById('canvas');
 const ctx = cvs.getContext('2d');
 
 // Load images and sounds  
+let altBackground = new Image();
 let background = new Image();
 let pipeNorth = new Image();
 let pipeSouth = new Image();
@@ -13,6 +14,7 @@ let programmer = new Image();
 let fly = new Audio();
 let scor = new Audio();
 
+altBackground.src = 'image/alt-bg.png';
 background.src = "image/bg.png";
 pipeNorth.src = "image/pipeNorth.png";
 pipeSouth.src = "image/pipeSouth.png";
@@ -22,8 +24,8 @@ fly.src = 'sounds/fly.mp3';
 scor.src = 'sounds/score.mp3';
 
 // Load pre-game background
-background.onload = function () {
-  ctx.drawImage(background, 0, 0); // Draw background
+altBackground.onload = function () {
+  ctx.drawImage(altBackground, 0, 0); // Draw background
 }
 
 // In-game variables
@@ -108,10 +110,12 @@ function draw() {
   }
 
   // Display your score and top score
-  ctx.fillStyle = '#000';
+  ctx.fillStyle = 'black';
   ctx.font = '20px Verdana'
-  ctx.fillText(`Your Score: ${score}`, 10, cvs.height - 20);
-  ctx.fillText(`Top Score: ${highscore}`, 10, cvs.height - 40);
+  ctx.fillText(`Your Score: ${score}`, 5, cvs.height - 85);
+  ctx.fillStyle = 'white';
+  ctx.font = '20px Verdana'
+  ctx.fillText(`Top Score: ${highscore}`, cvs.width/2, cvs.height - 10);
 
   requestAnimationFrame(draw);
 }

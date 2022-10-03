@@ -1,14 +1,13 @@
 * {
   margin: 0px;
   padding: 0px;
-  font-family: Rockwell;
-  text-align: center;
+  font-family: 'Poppins';
 }
 
 body {
-  background-color: #272b30;
+  background-image:url(image/website-background.png);
   color: #c8c8c8;
-  padding: 10px;
+  padding: 30px;
 }
 
 main {
@@ -23,4 +22,23 @@ main {
   display: flex;
   justify-content: center;
   gap: 10px;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  font-size: 18px;
+}
+
+button {
+  font-size: 20px;
+  border: 3px solid whitesmoke;
+}
+
+button:hover {
+  cursor: pointer;
 }
