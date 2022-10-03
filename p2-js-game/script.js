@@ -11,7 +11,6 @@ let pipeNorth = new Image();
 let pipeSouth = new Image();
 let floorBackground = new Image();
 let programmer = new Image();
-let fly = new Audio();
 let scor = new Audio();
 
 altBackground.src = 'image/alt-bg.png';
@@ -20,7 +19,6 @@ pipeNorth.src = "image/pipeNorth.png";
 pipeSouth.src = "image/pipeSouth.png";
 floorBackground.src = "image/fg.png";
 programmer.src = "image/bird.png";
-fly.src = 'sounds/fly.mp3';
 scor.src = 'sounds/score.mp3';
 
 // Load pre-game background
@@ -44,12 +42,16 @@ if (localStorage.getItem('highscore') == null) {
 // Get highscore on the localStorage
 let highscore = localStorage.getItem("highscore");
 
-// Moveup control on keydown
-document.addEventListener('keydown', moveUp);
-function moveUp() {
-  bY -= 20;
-  fly.play();
-}
+// Moveup control on keydown and on click
+document.addEventListener('keydown', event => {
+  if (event.code === 'Space') {
+    bY -= 20;
+  }
+})
+
+document.addEventListener('click', event => {
+    bY -= 25; // Set bY higher because click is harder
+})
 
 // Create pipe array and initialize pipe coordinates
 let pipe = [];
@@ -118,6 +120,11 @@ function draw() {
   ctx.fillText(`Top Score: ${highscore}`, cvs.width/2, cvs.height - 10);
 
   requestAnimationFrame(draw);
+}
+
+//Shows an alert instruction on how to play the game
+function instruction() {
+  alert('JED is getting pulled to the lava ground. Do not let JED hit the ground or any obstacles coming to him. Use the <SPACEBAR> or <CLICK> at the screen to jump up and avoid hitting the lava ground or any obstacles approaching him. Good luck and have fun!');
 }
 
 // Executes draw function and show hidden buttons
