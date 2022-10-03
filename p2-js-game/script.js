@@ -113,8 +113,12 @@ function draw() {
 
 // Execute draw function if play button is clicked
 function play() {
+  alert('Do not let your hero fall or hit the obstacles!')
   draw();
   document.getElementById('play').style.display = 'none';
+  document.getElementById('restart').style.display = 'inline';
+  document.getElementById('exit').style.display = 'inline';
+
 }
 
 function restart() {
