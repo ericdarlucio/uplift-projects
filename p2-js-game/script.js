@@ -4,13 +4,6 @@ const cvs = document.getElementById('canvas');
 // Get ctx
 const ctx = cvs.getContext('2d');
 
-// Load pre-game background
-let openBg = new Image();
-openBg.src = 'image/bg.png';
-openBg.onload = function () {
-  ctx.drawImage(openBg, 0, 0);
-}  
-
 // Load images and sounds  
 let bg = new Image();
 let pipeNorth = new Image();
@@ -28,9 +21,15 @@ bird.src = "image/bird.png";
 fly.src = 'sounds/fly.mp3';
 scor.src = 'sounds/score.mp3';
 
+// Load pre-game background
+bg.onload = function () {
+  ctx.drawImage(bg, 0, 0); // Draw background
+}  
+
+
 
 // In-game variables
-let gap = 100;
+let gap = 110;
 let constant = pipeNorth.height + gap;
 let bX = 10;
 let bY = 150;
@@ -71,7 +70,7 @@ function draw() {
     }
 
     // Detect collision
-    if ( bX + bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && ( bY <= pipe[i].y + pipeNorth.height || bY + bird.height >= pipe[i].y + constant) || bY + bird.height >= cvs.height - fg.height) {
+    if ( bX + bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && ( bY <= pipe[i].y + pipeNorth.height - 5 || bY + bird.height >= pipe[i].y + constant) || bY + bird.height >= cvs.height - fg.height) {
       if (score > highscore) { // If current score is greater than high score
         location.reload(); 
         alert("Congratulations! You're the new highscore");
@@ -105,13 +104,26 @@ function draw() {
   // Display your score and top score
   ctx.fillStyle = '#000';
   ctx.font = '20px Verdana'
-  ctx.fillText(`Your score: ${score}`, 10, cvs.height - 20);
-  ctx.fillText(`Top score: ${highscore}`, 10, cvs.height - 40);
+  ctx.fillText(`Your Score: ${score}`, 10, cvs.height - 20);
+  ctx.fillText(`Top Score: ${highscore}`, 10, cvs.height - 40);
 
   requestAnimationFrame(draw);
   
 }
 
 // Execute draw function if play button is clicked
-const ready = document.getElementById('play'); 
-ready.addEventListener('click', draw);
+function play() {
+  draw();
+  document.getElementById('play').style.display = 'none';
+}
+
+function restart() {
+  if (confirm('Are you sure you want to restart the game?')) {
+    location.reload();
+  }}
+
+function exit() {
+  if (confirm('Are you sure you want to close the game?')) {
+    window.close();
+  }
+}

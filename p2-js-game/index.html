@@ -8,12 +8,19 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Game Title</h1>
-  <canvas id='canvas' height='512' width='288' style='border: 1px solid black'></canvas>
-  <button id='play'>Play!</button>
+  <main>
+    <div class='left-container'>
+      <h3>Game Title</h3>
+      <p></p>
+    </div>
+    <div class='right-container'>
+      <canvas id='canvas' height='512' width='288' style='border: 1px solid black'></canvas>
+      <button id='play' onclick='play()'>Play!</button>
+      <button id='restart' onclick='restart()'>Restart</button>
+      <button id='exit' onclick='exit()'>Exit</button>
+    </div>
 
-
-
-  <script src="script.js" defer></script>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
