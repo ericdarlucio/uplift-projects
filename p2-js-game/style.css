@@ -1,7 +1,9 @@
+/* MOBILE */
 * {
   margin: 0px;
   padding: 0px;
-  font-family: 'Poppins';
+  font-family: cursive;
+  box-sizing: border-box;
 }
 
 body {
@@ -18,31 +20,77 @@ main {
   gap: 10px;
 }
 
+.left-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin-bottom: 30px;
+  align-self: center;
+  letter-spacing: 5px;
+}
+
+.storyline {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.story {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.instruction {
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+#canvas {
+  border: 3px solid #778899;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
 .button-container {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
 
-h1 {
-  text-align: center;
-}
-
-h3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-p {
-  font-size: 18px;
-}
-
 button {
   font-size: 20px;
-  border: 3px solid whitesmoke;
+  border: 3px solid #c8c8c8;
+  padding: 2px 5px;
+  border-radius: 10px;
+  background-color: #c8c8c8;
+  color: #161515;
 }
 
 button:hover {
   cursor: pointer;
+}
+
+/* TABLET */
+@media only screen and (min-width: 768px) and (max-width: 991px){
+  /* if the screen has width from 768 to 991px*/
+
+}
+
+
+/* DESKTOP */
+@media only screen and (min-width: 992px){ 
+  /* if the screen has width >= 992px*/
+  main {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .storyline {
+    align-self: center;
+  }
+
+  #canvas {
+    margin-top: 80px;
+  }
 }
