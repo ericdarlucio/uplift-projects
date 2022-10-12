@@ -14,11 +14,11 @@ let programmer = new Image();
 let scor = new Audio();
 
 altBackground.src = 'image/alt-bg.png';
-background.src = "image/bg.png";
-pipeNorth.src = "image/pipeNorth.png";
-pipeSouth.src = "image/pipeSouth.png";
-floorBackground.src = "image/fg.png";
-programmer.src = "image/bird.png";
+background.src = 'image/bg.png';
+pipeNorth.src = 'image/pipeNorth.png';
+pipeSouth.src = 'image/pipeSouth.png';
+floorBackground.src = 'image/fg.png';
+programmer.src = 'image/bird.png';
 scor.src = 'sounds/score.mp3';
 
 // Load pre-game background
@@ -28,7 +28,7 @@ altBackground.onload = function () {
 
 // In-game variables
 let gap = 100;
-let constant = 242 + 100; // Changed from adding pipeNorth.height and gap variables to pure numbers to remove the closed pipe bug
+let constant = 242 + 100; // Changed from adding pipeNorth.height and gap variables to pure numbers to remove the closed pipe bug at the start
 let bX = 10;
 let bY = 150;
 let gravity = 1.2;
@@ -36,11 +36,11 @@ let score = 0;
 
 // Initialize highscore on the localStorage
 if (localStorage.getItem('highscore') == null) {
-  localStorage.setItem("highscore", score);
+  localStorage.setItem('highscore', score);
 } 
 
 // Get highscore on the localStorage
-let highscore = localStorage.getItem("highscore");
+let highscore = localStorage.getItem('highscore');
 
 // Moveup control on keydown and on click
 document.addEventListener('keydown', event => {
@@ -53,10 +53,10 @@ document.addEventListener('click', event => {
     bY -= 25; // Set bY higher because click is harder
 })
 
-// Create pipe array and initialize pipe coordinates
+// Create pipe array and initialize first pipe coordinate
 let pipe = [];
 pipe[0] = {
-  x : cvs.width,
+  x : cvs.width, // End of canvas width screen
   y : Math.floor(Math.random()*pipeNorth.height)-pipeNorth.height // This needs to be negative for the top pipe to move up
 }
 
@@ -84,7 +84,7 @@ function draw() {
       
       if (score > highscore) { // If current score is greater than high score
         location.reload(); 
-        alert("Congratulations! You're the new highscore");
+        alert('Congratulations! You are the new highscore');
         return
       }else { // If current score is less than high score
         location.reload(); 
@@ -107,7 +107,7 @@ function draw() {
   // Save highscore in local storage
   if(highscore !== null){
       if (score > highscore) {
-          localStorage.setItem("highscore", score);      
+          localStorage.setItem('highscore', score);      
       }
   }
 
@@ -122,9 +122,13 @@ function draw() {
   requestAnimationFrame(draw);
 }
 
-//Shows an alert instruction on how to play the game
+//Shows or hides the accordion instruction on how to play the game
 function instruction() {
-  alert('JED is getting pulled to the lava ground. Do not let JED hit the ground or any obstacles coming to him. Use the <SPACEBAR> or <CLICK> at the screen to jump up and avoid hitting the lava ground or any obstacles approaching him. Good luck and have fun!');
+  if (document.getElementById('accordion').style.display == 'none') {
+    document.getElementById('accordion').style.display = 'inline';
+  } else if (document.getElementById('accordion').style.display == 'inline') {
+    document.getElementById('accordion').style.display = 'none';
+  }
 }
 
 // Executes draw function and show hidden buttons
