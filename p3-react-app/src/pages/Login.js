@@ -15,7 +15,11 @@ const Login = () => {
     e.preventDefault();
     if ( username === 'admin' && password === '1234'){  
       navigate('/admin');
-    } else { alert('Incorrect username or password'); setPassword(''); setUsername('')}
+    }else {
+      alert('Incorrect username or password');
+      setPassword('');
+      setUsername('')
+    }
   }
 
   return (
