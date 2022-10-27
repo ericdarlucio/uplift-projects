@@ -1,3 +1,31 @@
+.Login-container {
+  margin: 200px 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
 .Login-modal {
+  background-color: aliceblue;
+  position: fixed;
+  top: 30%;
+  left: 42.5%;
   border: 2px solid black;
+  padding: 10px;
+}
+
+.Login-modal form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+.Login-modal label {
+  text-align: left;
+}
+
+.Login-container button {
+  margin: 10px 0px;
 }

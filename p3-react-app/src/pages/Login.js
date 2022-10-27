@@ -15,7 +15,7 @@ const Login = () => {
   const checkCredentials = (e) => {
     e.preventDefault();
     if ( username === 'admin' && password === '1234'){  
-      navigate('/admin');
+      navigate('/sikretongmalupet');
     }else {
       alert('Incorrect username or password');
       setPassword('');
@@ -24,7 +24,7 @@ const Login = () => {
   }
 
   return (
-    <>
+    <div className='Login-container'>
       <h1>Login Page</h1>
       <button
         onClick={() => setShowForm(!showForm)}
@@ -39,14 +39,12 @@ const Login = () => {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             ></input>
-            <br></br>
             <label>Password:</label>
             <input 
               type='password'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             ></input>
-            <br></br>
             <button
               onClick={checkCredentials}
             >Login</button>
@@ -56,7 +54,7 @@ const Login = () => {
       }
       <br></br>
       <Link to='/customer'><span>Continue as customer</span></Link>
-    </>
+    </div>
   )
 }
 
