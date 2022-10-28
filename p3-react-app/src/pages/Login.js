@@ -32,23 +32,30 @@ const Login = () => {
       {
         showForm && 
         <div className='Login-modal'>
-          <form>
-            <label>Username:</label>
-            <input 
-              type='text'
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            ></input>
-            <label>Password:</label>
-            <input 
-              type='password'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            ></input>
-            <button
-              onClick={checkCredentials}
-            >Login</button>
-          </form>
+          <div className='Login-modal-content'>
+            <form>
+              <label>Username:</label>
+              <input 
+                type='text'
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              ></input>
+              <label>Password:</label>
+              <input 
+                type='password'
+                value={password}
+                autoComplete='on'
+                onChange={(e) => setPassword(e.target.value)}
+              ></input>
+              <button
+                onClick={checkCredentials}
+              >Login</button>
+              <button
+                type='button'
+                onClick={() => setShowForm(!showForm) }
+              >Back</button>
+            </form>
+          </div>
         </div>
 
       }
