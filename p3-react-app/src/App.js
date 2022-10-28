@@ -5,7 +5,6 @@ import Customer from './pages/Customer';
 import CustomerForm from './pages/CustomerForm';
 import CustomerOrder from './pages/CustomerOrder';
 
-
 const App = () => {
 
   return (

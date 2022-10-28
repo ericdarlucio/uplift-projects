@@ -1,19 +1,129 @@
-import { Link } from "react-router-dom";
-import './CustomerForm.css'
+import { Link, useNavigate } from 'react-router-dom';
+import './CustomerForm.css';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 const CustomerForm = () => {
-  return (
-    <div className="CustomerForm-container">
+	const [fname, setFirstName] = useState('');
+	const [lname, setLastName] = useState('');
+	const [stAddress, setStreetAddress] = useState('');
+	const [brgy, setBarangay] = useState('Amanoaoac');
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-      <form>
+	const mapandanBarangays = [
+    {value:'Amanoaoac', label: 'Amanoaoac'},
+    {value:'Apaya', label: 'Apaya'},
+    {value:'Aserda', label: 'Aserda'},
+    {value:'Baloling', label: 'Baloling'},
+    {value:'Coral', label: 'Coral'},
+    {value:'Golden', label: 'Golden'},
+    {value:'Jimenez', label: 'Jimenez'},
+    {value:'Lambayan', label: 'Lambayan'},
+    {value:'Luyan', label: 'Luyan'},
+    {value:'Nilombot', label: 'Nilombot'},
+    {value:'Pias', label: 'Pias'},
+    {value:'Poblacion', label: 'Poblacion'},
+    {value:'Primicias', label: 'Primicias'},
+    {value:'Santa Maria', label: 'Santa Maria'},
+    {value:'Torres', label: 'Torres'}
+  ];
 
-      </form>
+  const submitOrder = () => {
+    dispatch({
+      type: 'SUBMIT_ORDER',
+      payload: {
+        firstName: fname,
+        lastName: lname,
+        streetAddress: stAddress,
+        barangay: brgy
+      }});
+    navigate('/customer/order');
+  } 
 
-      <Link to='/customer/order'><span>Go to customer order page</span></Link>
-      <br></br>
-      <Link to='/customer'><span>Go back to customer welcome page</span></Link>
-    </div>
-  )
-}
+	return (
+		<div className='CustomerForm-container'>
+			<form onSubmit={(e) => {
+          e.preventDefault();
+          setShowConfirmation(!showConfirmation);
+      }}>
+				<label>First Name:</label>
+				<input
+          required
+					type='text'
+					value={fname}
+					onChange={(e) => setFirstName(e.target.value)}
+				></input>
+
+				<label>Last Name:</label>
+				<input
+          required
+					type='text'
+					value={lname}
+					onChange={(e) => setLastName(e.target.value)}
+				></input>
+				<label>Street Address:</label>
+				<input
+          required
+					type='text'
+					placeholder='ex. 51 Pico Avenue'
+					value={stAddress}
+					onChange={(e) => setStreetAddress(e.target.value)}
+				></input>
+
+				<label>Barangay:</label>
+				<select
+					defaultValue={brgy}
+					onChange={(e) => setBarangay(e.target.value)}
+				>
+					<option style={{ textAlign: 'center' }} disabled>
+						---Choose your barangay---
+					</option>
+					{mapandanBarangays.map((option) => {
+						return (
+							<option key={option.value} value={option.value}>
+								{option.label}
+							</option>
+						);
+					})}
+				</select>
+
+        <button type='submit'>Place your order</button>
+
+			</form>
+
+      {
+        showConfirmation &&
+        <div className='CustomerForm-confirmation-modal'>
+          <div className='CustomerForm-confirmation-modal-content'>
+            <h1>Hello, please confirm your order details</h1>
+            <p>First name: <span style={{color: 'blue'}}>{fname}</span></p>
+            <p>Last name: <span style={{color: 'blue'}}>{lname}</span></p>
+            <p>Street address: <span style={{color: 'blue'}}>{stAddress}</span></p>
+            <p>Barangay: <span style={{color: 'blue'}}>{brgy}</span></p>
+            <button
+              onClick={() => setShowConfirmation(!showConfirmation)}
+            >Cancel</button>
+            <button
+              type='submit'
+              onClick={(e) => {
+                e.preventDefault()
+                submitOrder();
+                setShowConfirmation(!showConfirmation);
+              }}
+            >Confirm</button>
+          </div>
+        </div>
+      }
+
+			<br></br>
+
+			<Link to='/customer'>
+				<span>Go back to customer welcome page</span>
+			</Link>
+		</div>
+	);
+};
 
 export default CustomerForm;
