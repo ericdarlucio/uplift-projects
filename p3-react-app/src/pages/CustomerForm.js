@@ -8,6 +8,7 @@ const CustomerForm = () => {
 	const [lname, setLastName] = useState('');
 	const [stAddress, setStreetAddress] = useState('');
 	const [brgy, setBarangay] = useState('Amanoaoac');
+  const [waterOrder, setWaterOrder] = useState(0);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -37,9 +38,11 @@ const CustomerForm = () => {
         firstName: fname,
         lastName: lname,
         streetAddress: stAddress,
-        barangay: brgy
+        barangay: brgy,
+        quantity: waterOrder,
+        status: 'pending'
       }});
-    navigate('/customer/order');
+    navigate('/customer/order', {state: {fname: fname, lname: lname, status: 'pending'}});
   } 
 
 	return (
@@ -63,6 +66,7 @@ const CustomerForm = () => {
 					value={lname}
 					onChange={(e) => setLastName(e.target.value)}
 				></input>
+
 				<label>Street Address:</label>
 				<input
           required
@@ -89,6 +93,16 @@ const CustomerForm = () => {
 					})}
 				</select>
 
+				<label>Number of order:</label>
+				<input
+          required
+					type='number'
+					value={waterOrder}
+          min='1'
+          max='20'
+					onChange={(e) => setWaterOrder(e.target.value)}
+				></input>        
+
         <button type='submit'>Place your order</button>
 
 			</form>
@@ -102,6 +116,7 @@ const CustomerForm = () => {
             <p>Last name: <span style={{color: 'blue'}}>{lname}</span></p>
             <p>Street address: <span style={{color: 'blue'}}>{stAddress}</span></p>
             <p>Barangay: <span style={{color: 'blue'}}>{brgy}</span></p>
+            <p>Number of orders: <span style={{color: 'blue'}}>{waterOrder}</span></p>
             <button
               onClick={() => setShowConfirmation(!showConfirmation)}
             >Cancel</button>
