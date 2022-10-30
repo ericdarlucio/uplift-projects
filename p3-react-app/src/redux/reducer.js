@@ -1,37 +1,37 @@
 const initialState = {
   allOrders: [
-    {
-      firstName: 'Princess',
-      lastName: 'Robles',
-      streetAddress: '707 Chico St',
-      barangay: 'Pias',
-      quantity: 1,
-      status: 'pending'
-    },
-    {
-      firstName: 'Eric',
-      lastName: 'Darlucio',
-      streetAddress: '51 Pico Ave',
-      barangay: 'Coral',
-      quantity: 1,
-      status: 'collected'
-    },
-    {
-      firstName: 'Roz',
-      lastName: 'Dalope',
-      streetAddress: '123 Abs St',
-      barangay: 'Lambayan',
-      quantity: 1,
-      status: 'dispatched'
-    },
-    {
-      firstName: 'Juan',
-      lastName: 'Dela Cruz',
-      streetAddress: '123 Mabolo St',
-      barangay: 'Poblacion',
-      quantity: 1,
-      status: 'delivered'
-    }
+    // {
+    //   firstName: 'Princess',
+    //   lastName: 'Robles',
+    //   streetAddress: '707 Chico St',
+    //   barangay: 'Pias',
+    //   quantity: 1,
+    //   status: 'pending'
+    // },
+    // {
+    //   firstName: 'Eric',
+    //   lastName: 'Darlucio',
+    //   streetAddress: '51 Pico Ave',
+    //   barangay: 'Coral',
+    //   quantity: 1,
+    //   status: 'collected'
+    // },
+    // {
+    //   firstName: 'Roz',
+    //   lastName: 'Dalope',
+    //   streetAddress: '123 Abs St',
+    //   barangay: 'Lambayan',
+    //   quantity: 1,
+    //   status: 'dispatched'
+    // },
+    // {
+    //   firstName: 'Juan',
+    //   lastName: 'Dela Cruz',
+    //   streetAddress: '123 Mabolo St',
+    //   barangay: 'Poblacion',
+    //   quantity: 1,
+    //   status: 'delivered'
+    // }
   ]
 };
 
@@ -46,7 +46,8 @@ const reducer = ( state = initialState, action ) => {
           streetAddress: action.payload.streetAddress,
           barangay: action.payload.barangay,
           quantity: action.payload.quantity,
-          status: action.payload.status
+          status: action.payload.status,
+          id: action.payload.id
         }]}
       );
     case 'DELETE':

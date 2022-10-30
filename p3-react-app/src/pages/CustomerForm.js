@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import './CustomerForm.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import {v4 as uuidv4} from 'uuid';
 
 const CustomerForm = () => {
 	const [fname, setFirstName] = useState('');
@@ -10,6 +11,7 @@ const CustomerForm = () => {
 	const [brgy, setBarangay] = useState('Amanoaoac');
   const [waterOrder, setWaterOrder] = useState(0);
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const orderId = uuidv4();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -40,9 +42,10 @@ const CustomerForm = () => {
         streetAddress: stAddress,
         barangay: brgy,
         quantity: waterOrder,
+        id: orderId,
         status: 'pending'
       }});
-    navigate('/customer/order', {state: {fname: fname, lname: lname, status: 'pending'}});
+    navigate('/customer/order', {state: {id: orderId}});
   } 
 
 	return (
