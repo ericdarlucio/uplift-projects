@@ -21,6 +21,7 @@ const Admin = () => {
 
   return (
     <div className="Admin-container">
+      <Link to='/'><span>Log out</span></Link>      
       <div>Orders Dashboard</div>
       <div className="Admin-status-container">
         <div
@@ -87,7 +88,6 @@ const Admin = () => {
           return <OrderCard key={order.firstName} array={order} />
         })
       }
-      <Link to='/'><span>Go to back login page</span></Link>      
     </div>
   )
 }
