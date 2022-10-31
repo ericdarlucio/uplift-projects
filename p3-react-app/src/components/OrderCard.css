@@ -1,7 +1,7 @@
 .OrderCard-container {
   border: 2px solid black;
   border-radius: 10px;
-  width: 50%;
+  width: 350px;
   display: flex;
   flex-direction: column;
   padding: 5px;

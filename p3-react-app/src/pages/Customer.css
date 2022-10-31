@@ -11,6 +11,10 @@
   align-items: center;
 }
 
+.CustomerWelcome-container h1 {
+  padding: 0px 100px;
+}
+
 .Customer-tracking-modal {
   position: fixed;
   left: 0;
