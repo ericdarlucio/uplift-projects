@@ -8,6 +8,7 @@ import './CustomerForm.css';
 const CustomerForm = () => {
 	const [fname, setFirstName] = useState('');
 	const [lname, setLastName] = useState('');
+	const [contactNo, setContactNo] = useState(0);
 	const [stAddress, setStreetAddress] = useState('');
 	const [brgy, setBarangay] = useState('Amanoaoac');
   const [waterOrder, setWaterOrder] = useState(0);
@@ -40,6 +41,7 @@ const CustomerForm = () => {
       payload: {
         firstName: fname,
         lastName: lname,
+        contactNo: contactNo,
         streetAddress: stAddress,
         barangay: brgy,
         quantity: waterOrder,
@@ -71,6 +73,14 @@ const CustomerForm = () => {
 					type='text'
 					value={lname}
 					onChange={(e) => setLastName(e.target.value)}
+				></input>
+
+        <label>Contact No.:</label>
+				<input
+          required
+					type='tel'
+					value={contactNo}
+					onChange={(e) => setContactNo(e.target.value)}
 				></input>
 
 				<label>Street Address:</label>
@@ -121,6 +131,7 @@ const CustomerForm = () => {
             <h1>Hello, please confirm your order details</h1>
             <p>First name: <span style={{color: 'blue'}}>{fname}</span></p>
             <p>Last name: <span style={{color: 'blue'}}>{lname}</span></p>
+            <p>Contact no.: <span style={{color: 'blue'}}>{contactNo}</span></p>
             <p>Street address: <span style={{color: 'blue'}}>{stAddress}</span></p>
             <p>Barangay: <span style={{color: 'blue'}}>{brgy}</span></p>
             <p>Number of orders: <span style={{color: 'blue'}}>{waterOrder}</span></p>

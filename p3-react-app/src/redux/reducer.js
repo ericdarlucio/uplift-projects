@@ -5,6 +5,7 @@ const initialState = {
     {
       firstName: 'Jose',
       lastName: 'Rizal',
+      contactNo: '09123456789',
       streetAddress: '123 Rizal St',
       barangay: 'Poblacion',
       quantity: 1,
@@ -14,6 +15,7 @@ const initialState = {
     {
       firstName: 'Pedro',
       lastName: 'San Pedro',
+      contactNo: '09123123123',
       streetAddress: '321 Pedro Ave',
       barangay: 'Luyan',
       quantity: 1,
@@ -23,6 +25,7 @@ const initialState = {
     {
       firstName: 'Emilia',
       lastName: 'Jacinta',
+      contactNo: '09234234234',
       streetAddress: '123 Makopa St',
       barangay: 'Pias',
       quantity: 1,
@@ -32,6 +35,7 @@ const initialState = {
     {
       firstName: 'Juan',
       lastName: 'Dela Cruz',
+      contactNo: '09345345345',
       streetAddress: '123 Mabolo St',
       barangay: 'Coral',
       quantity: 1,
@@ -50,6 +54,7 @@ const reducer = ( state = initialState, action ) => {
         {allOrders: [...state.allOrders, {
           firstName: action.payload.firstName,
           lastName: action.payload.lastName,
+          contactNo: action.payload.contactNo,
           streetAddress: action.payload.streetAddress,
           barangay: action.payload.barangay,
           quantity: action.payload.quantity,

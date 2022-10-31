@@ -9,6 +9,7 @@ const OrderCard = ({array}) => {
     <div className="OrderCard-container">
 
       <p>{array.firstName} {array.lastName}</p>
+      <p>{array.contactNo}</p>
       <p>{array.streetAddress}, {array.barangay}</p>
       <p>Order Qty: {array.quantity}</p>
       <p>Order ID: {array.id}</p>
