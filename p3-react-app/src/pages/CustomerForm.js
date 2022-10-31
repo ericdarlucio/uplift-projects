@@ -1,8 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom';
-import './CustomerForm.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {v4 as uuidv4} from 'uuid';
+
+import './CustomerForm.css';
 
 const CustomerForm = () => {
 	const [fname, setFirstName] = useState('');
@@ -50,10 +51,12 @@ const CustomerForm = () => {
 
 	return (
 		<div className='CustomerForm-container'>
+      
 			<form onSubmit={(e) => {
           e.preventDefault();
           setShowConfirmation(!showConfirmation);
       }}>
+
 				<label>First Name:</label>
 				<input
           required
@@ -113,6 +116,7 @@ const CustomerForm = () => {
       {
         showConfirmation &&
         <div className='CustomerForm-confirmation-modal'>
+
           <div className='CustomerForm-confirmation-modal-content'>
             <h1>Hello, please confirm your order details</h1>
             <p>First name: <span style={{color: 'blue'}}>{fname}</span></p>
@@ -120,9 +124,11 @@ const CustomerForm = () => {
             <p>Street address: <span style={{color: 'blue'}}>{stAddress}</span></p>
             <p>Barangay: <span style={{color: 'blue'}}>{brgy}</span></p>
             <p>Number of orders: <span style={{color: 'blue'}}>{waterOrder}</span></p>
+
             <button
               onClick={() => setShowConfirmation(!showConfirmation)}
             >Cancel</button>
+
             <button
               type='submit'
               onClick={(e) => {
@@ -132,6 +138,7 @@ const CustomerForm = () => {
               }}
             >Confirm</button>
           </div>
+
         </div>
       }
 
@@ -140,6 +147,7 @@ const CustomerForm = () => {
 			<Link to='/customer'>
 				<span>Go back to customer welcome page</span>
 			</Link>
+
 		</div>
 	);
 };

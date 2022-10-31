@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 
 import './Admin.css'
+
 import OrderCard from "../components/OrderCard";
-import { useState } from "react";
 
 const Admin = () => {
 
@@ -21,9 +22,17 @@ const Admin = () => {
 
   return (
     <div className="Admin-container">
-      <Link to='/'><span>Log out</span></Link>      
+
+      <Link to='/'><span>Log out</span></Link>
+
+      <br></br>
+
       <div>Orders Dashboard</div>
+
+      <br></br>
+
       <div className="Admin-status-container">
+
         <div
           className="Admin-status-pending"
           onClick={() => {
@@ -63,31 +72,51 @@ const Admin = () => {
             setShowDelivered(true);
           }}
         >Delivered</div>
+
       </div>
+
       {
         showPending &&
-        pendingOrders.map( order => {
-          return <OrderCard key={order.firstName} array={order} />
-        })
+        <>
+          <div>Total: {pendingOrders.length}</div>
+          {
+            pendingOrders.map( order => {
+            return <OrderCard key={order.firstName} array={order} />
+            })
+          }
+        </>
       }
+
       {
         showCollected &&
-        collectedOrders.map( order => {
-          return <OrderCard key={order.firstName} array={order} />
-        })
+        <>
+          <p>Total: {collectedOrders.length}</p>
+          {collectedOrders.map( order => {
+            return <OrderCard key={order.firstName} array={order} />
+          })}
+        </>
       }
+
       {
         showDispatched &&
-        dispatchedOrders.map( order => {
-          return <OrderCard key={order.firstName} array={order} />
-        })
+        <>
+          <p>Total: {dispatchedOrders.length}</p>
+          {dispatchedOrders.map( order => {
+            return <OrderCard key={order.firstName} array={order} />
+          })}
+        </>
       }
+
       {
         showDelivered &&
-        deliveredOrders.map( order => {
-          return <OrderCard key={order.firstName} array={order} />
-        })
+        <>
+          <p>Total: {deliveredOrders.length}</p>
+          {deliveredOrders.map( order => {
+            return <OrderCard key={order.firstName} array={order} />
+          })}
+        </>
       }
+
     </div>
   )
 }

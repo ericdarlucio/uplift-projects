@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import './CustomerOrder.css';
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
+
+import './CustomerOrder.css';
 
 const CustomerOrder = () => {
 
@@ -11,6 +12,7 @@ const CustomerOrder = () => {
   
   return (
     <div className="CustomerOrder-container">
+
       <h1>Order Id: {location.state.id}</h1>
 
       {
@@ -29,8 +31,10 @@ const CustomerOrder = () => {
         <p>Order not found!</p>
       }
 
+      <br></br>
 
       <Link to='/customer'><span>Go to back to customer welcome page</span></Link>
+      
     </div>
   )
 }
