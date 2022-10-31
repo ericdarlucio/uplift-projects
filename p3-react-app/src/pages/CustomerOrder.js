@@ -20,7 +20,7 @@ const CustomerOrder = () => {
         orders.filter(order => order.id === location.state.id).map(order => {
             return (
               <>
-                <p>Hi {order.firstName} {order.lastName}! The status of your order is {order.status}.</p>
+                <p key={order.id}>Hi {order.firstName} {order.lastName}! The status of your order is {order.status}.</p>
               </>
             )
         })
@@ -34,7 +34,7 @@ const CustomerOrder = () => {
       <br></br>
 
       <Link to='/customer'><span>Go to back to customer welcome page</span></Link>
-      
+
     </div>
   )
 }

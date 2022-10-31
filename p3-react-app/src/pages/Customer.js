@@ -19,8 +19,6 @@ const Customer = () => {
 
       <Link to='/customer/form'><button>Order now!</button></Link>
 
-      <br></br>
-
       <button
         type='button'
         onClick={() => setShowForm(!showForm) }
@@ -41,7 +39,15 @@ const Customer = () => {
 
               <button
                 type='button'
-                onClick={() => navigate('/customer/order', {state: {id: trackingNumber}})}
+                onClick={() => {
+                  if (trackingNumber.trim() === ''){
+                    alert('You must enter a valid tracking id!')
+                  } else {
+                    navigate('/customer/order', {state: {id: trackingNumber}});
+                  }
+                }
+                
+                }
               >Track Order</button>
 
               <button
