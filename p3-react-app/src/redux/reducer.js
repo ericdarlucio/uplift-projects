@@ -8,7 +8,7 @@ const initialState = {
       streetAddress: '123 Rizal St',
       barangay: 'Poblacion',
       quantity: 1,
-      id: uuidv4(),
+      id: uuidv4().split('-')[4],
       status: 'pending'
     },
     {
@@ -17,7 +17,7 @@ const initialState = {
       streetAddress: '321 Pedro Ave',
       barangay: 'Luyan',
       quantity: 1,
-      id: uuidv4(),
+      id: uuidv4().split('-')[4],
       status: 'collected'
     },
     {
@@ -26,7 +26,7 @@ const initialState = {
       streetAddress: '123 Makopa St',
       barangay: 'Pias',
       quantity: 1,
-      id: uuidv4(),
+      id: uuidv4().split('-')[4],
       status: 'dispatched'
     },
     {
@@ -35,7 +35,7 @@ const initialState = {
       streetAddress: '123 Mabolo St',
       barangay: 'Coral',
       quantity: 1,
-      id: uuidv4(),
+      id: uuidv4().split('-')[4],
       status: 'delivered'
     }
   ]

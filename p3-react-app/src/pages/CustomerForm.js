@@ -12,7 +12,7 @@ const CustomerForm = () => {
 	const [brgy, setBarangay] = useState('Amanoaoac');
   const [waterOrder, setWaterOrder] = useState(0);
   const [showConfirmation, setShowConfirmation] = useState(false);
-  const orderId = uuidv4();
+  const orderId = uuidv4().split('-')[4];
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
