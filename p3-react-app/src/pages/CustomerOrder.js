@@ -18,11 +18,7 @@ const CustomerOrder = () => {
       {
         ordersId.includes(location.state.id) &&
         orders.filter(order => order.id === location.state.id).map(order => {
-            return (
-              <>
-                <p key={order.id}>Hi {order.firstName} {order.lastName}! The status of your order is {order.status}.</p>
-              </>
-            )
+          return <p key={order.id}>Hi {order.firstName} {order.lastName}! The status of your order is {order.status}.</p>
         })
       }
 
