@@ -1,4 +1,5 @@
 import './Login.css';
+import Footer from '../components/Footer';
 
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -81,10 +82,7 @@ const Login = () => {
         </div>
       }
 
-      <div className='Login-footer'>
-        <p>© Copyright 2022</p>
-        <p>Images from <a href='https://www.canva.com/' target='_blank' rel='noreferrer'>Canva</a></p>
-      </div>
+      <Footer />
 
     </div>
   )

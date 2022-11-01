@@ -1,0 +1,4 @@
+.TrackingForm-container {
+  display: flex;
+  flex-direction: column;
+}

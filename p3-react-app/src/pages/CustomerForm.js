@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
@@ -152,12 +152,6 @@ const CustomerForm = () => {
 
         </div>
       }
-
-			<br></br>
-
-			<Link to='/customer'>
-				<span>Go back to customer welcome page</span>
-			</Link>
 
 		</div>
 	);

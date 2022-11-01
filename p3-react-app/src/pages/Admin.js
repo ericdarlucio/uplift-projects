@@ -41,7 +41,7 @@ const Admin = () => {
             setShowDispatched(false);
             setShowDelivered(false);
           }}
-        >Pending</div>
+        >Pending</div> |
 
         <div 
           className="Admin-status-collected"
@@ -51,7 +51,7 @@ const Admin = () => {
             setShowDispatched(false);
             setShowDelivered(false);
           }}
-        >Collected</div>
+        >Collected</div> |
         
         <div 
           className="Admin-status-dispatched"
@@ -61,7 +61,7 @@ const Admin = () => {
             setShowDispatched(true);
             setShowDelivered(false);
           }}
-        >Dispatched</div>
+        >Dispatched</div> |
 
         <div
           className="Admin-status-completed"

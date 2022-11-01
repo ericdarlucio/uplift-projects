@@ -1,0 +1,16 @@
+.Footer {
+  font-size: 14px;
+  color: #1025a1;
+  text-align: center;
+}
+
+Footer a{
+  font-size: 14px;
+  color: #1025a1;
+  text-decoration: none;
+}
+
+Footer p{
+  font-size: 14px;
+  color: #1025a1;
+}
