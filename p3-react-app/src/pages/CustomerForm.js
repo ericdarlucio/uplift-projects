@@ -1,18 +1,18 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 import './CustomerForm.css';
 
 const CustomerForm = () => {
-	const [fname, setFirstName] = useState('');
-	const [lname, setLastName] = useState('');
-	const [contactNo, setContactNo] = useState(0);
-	const [stAddress, setStreetAddress] = useState('');
-	const [brgy, setBarangay] = useState('Amanoaoac');
-  const [waterOrder, setWaterOrder] = useState(0);
-  const [showConfirmation, setShowConfirmation] = useState(false);
+	const [ fname, setFirstName ] = useState('');
+	const [ lname, setLastName ] = useState('');
+	const [ contactNo, setContactNo ] = useState(0);
+	const [ stAddress, setStreetAddress ] = useState('');
+	const [ brgy, setBarangay ] = useState('Amanoaoac');
+  const [ waterOrder, setWaterOrder ] = useState(0);
+  const [ showConfirmation, setShowConfirmation ] = useState(false);
   const orderId = uuidv4().split('-')[4];
   const navigate = useNavigate();
   const dispatch = useDispatch();

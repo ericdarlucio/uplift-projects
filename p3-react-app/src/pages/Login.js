@@ -1,4 +1,4 @@
-import './Login.css'
+import './Login.css';
 
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -20,20 +20,41 @@ const Login = () => {
     }else {
       alert('Incorrect username or password');
       setPassword('');
-      setUsername('')
+      setUsername('');
     }
   }
 
   return (
     <div className='Login-container'>
-      <h1>Login Page</h1>
-      <button
-        onClick={() => setShowForm(!showForm)}
-      >Login as admin</button>
+
+      <div className='Login-header'>
+        <img 
+          className='Login-logo'
+          src={require('../images/logo.png')}
+          alt='logo' 
+        />
+        <button
+          className='Login-login-button'
+          onClick={() => setShowForm(!showForm)}
+        >Login as admin</button>
+      </div>
+
+      <div className='Login-story'>
+        <h1>We deliver clean and fresh drinking water at your doorstep!</h1>
+        <h2>Get your water while saving time.</h2>
+        <h3>Ready to place an order or want to track existing order? Click the button below to get started.</h3>
+        <Link to='/customer'>
+          <button
+            className='Login-start-button'
+          >Get Started</button>
+        </Link>
+      </div>
+
       {
         showForm && 
         <div className='Login-modal'>
           <div className='Login-modal-content'>
+            <h1>Login as admin</h1>
             <form>
               <label>Username:</label>
               <input 
@@ -58,12 +79,15 @@ const Login = () => {
             </form>
           </div>
         </div>
-
       }
-      <br></br>
-      <Link to='/customer'><span>Continue as customer</span></Link>
+
+      <div className='Login-footer'>
+        <p>© Copyright 2022</p>
+        <p>Images from <a href='https://www.canva.com/' target='_blank' rel='noreferrer'>Canva</a></p>
+      </div>
+
     </div>
   )
 }
 
-export default Login
+export default Login;

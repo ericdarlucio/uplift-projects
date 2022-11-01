@@ -5,8 +5,8 @@ import './Customer.css';
 
 const Customer = () => {
 
-  const [showForm, setShowForm] = useState(false);
-  const [trackingNumber, setTrackingNumber] = useState('');
+  const [ showForm, setShowForm ] = useState(false);
+  const [ trackingNumber, setTrackingNumber ] = useState('');
 
   const navigate = useNavigate();
 

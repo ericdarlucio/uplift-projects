@@ -1,12 +1,9 @@
 .Login-container {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 30px 15px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
 }
@@ -28,6 +25,7 @@
   background-color: aliceblue;
   position: fixed;
   border: 2px solid black;
+  border-radius: 10px;
   padding: 10px;
 }
 
@@ -50,4 +48,96 @@
 
 .Login-modal button {
   margin: 5px 0px;
+}
+
+.Login-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Login-logo {
+  width: auto;
+  height: 30px;
+}
+
+.Login-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Login-login-button {
+  font-size: 14px;
+  background-color: #1025a1;
+  color: #EFFFFD;
+  border: 0px;
+  border-radius: 5px;
+  padding: 0px 8px;
+}
+
+.Login-story {
+  padding: 50px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.Login-story h1 {
+  font-size: 28px;
+  color: #1025a1;
+  padding: 10px;
+}
+
+.Login-story h2 {
+  font-size: 20px;
+  color: #067fb7;
+  padding-bottom: 20px;
+}
+
+.Login-story h3 {
+  font-size: 16px;
+  color: #067fb7;
+  padding-bottom: 10px;
+}
+
+.Login-start-button {
+  font-size: 14px;
+  background-color: #1025a1;
+  color: #EFFFFD;
+  border: 0px;
+  border-radius: 4px;
+  padding: 8px 16px;
+}
+
+.Login-footer {
+  font-size: 14px;
+  color: #1025a1;
+  text-align: center;
+}
+
+.Login-footer a{
+  font-size: 14px;
+  color: #1025a1;
+  text-decoration: none;
+}
+
+.Login-footer p{
+  font-size: 14px;
+  color: #1025a1;
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+  /* if the screen has width from 768 to 991px*/
+}
+
+
+
+@media only screen and (min-width: 992px){ 
+  /* if the screen has width <= 767px*/
 }

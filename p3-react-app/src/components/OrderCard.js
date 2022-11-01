@@ -1,7 +1,7 @@
 import './OrderCard.css';
 import { useDispatch } from 'react-redux';
 
-const OrderCard = ({array}) => {
+const OrderCard = ( {array} ) => {
 
   const dispatch = useDispatch();
 
@@ -43,4 +43,4 @@ const OrderCard = ({array}) => {
   )
 }
 
-export default OrderCard
+export default OrderCard;
