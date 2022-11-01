@@ -42,7 +42,7 @@ const Login = () => {
 
       <div className='Login-story'>
         <h1>We deliver clean and fresh drinking water at your doorstep!</h1>
-        <h2>Get your water while saving time.</h2>
+        <h2>Get your water while saving your precious time and energy.</h2>
         <h3>Ready to place an order or want to track existing order? Click the button below to get started.</h3>
         <Link to='/customer'>
           <button
