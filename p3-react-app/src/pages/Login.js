@@ -55,7 +55,9 @@ const Login = () => {
         showForm && 
         <div className='Login-modal'>
           <div className='Login-modal-content'>
-            <h1>Login as admin</h1>
+
+            <h1>Login</h1>
+
             <form>
               <label>Username:</label>
               <input 
@@ -70,14 +72,18 @@ const Login = () => {
                 autoComplete='on'
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
-              <button
-                onClick={checkCredentials}
-              >Login</button>
-              <button
-                type='button'
-                onClick={() => setShowForm(!showForm) }
-              >Back</button>
+
+              <div className='Login-button-container'>
+                <button
+                  type='button'
+                  onClick={() => setShowForm(!showForm) }
+                >Back</button>
+                <button
+                  onClick={checkCredentials}
+                >Login</button>
+              </div>
             </form>
+
           </div>
         </div>
       }

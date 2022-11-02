@@ -34,7 +34,7 @@ const CustomerOrder = () => {
           <p>Hi! Your order is not found!</p>
         }
 
-        <Link to='/customer'><span>Return to homepage</span></Link>
+        <Link to='/'><span>Return to homepage</span></Link>
 
       </div>
 

@@ -36,10 +36,7 @@ const Customer = () => {
 
         {
           !showDefault &&
-
-          <>
             <TrackingForm />
-          </>
         }
 
         <br></br>
