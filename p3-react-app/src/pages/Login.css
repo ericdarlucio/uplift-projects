@@ -83,7 +83,7 @@
   position: fixed;
   border: 2px solid #1025a1;
   border-radius: 5px;
-  padding: 20px;
+  padding: 40px;
 }
 
 .Login-modal form {
@@ -95,16 +95,16 @@
 
 .Login-modal label {
   text-align: left;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .Login-modal h1 {
   color: #1025a1;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .Login-modal input {
-  font-size: 13px;
+  font-size: 14px;
   background-color: #EEF1FF;
   padding: 5px;
   margin-bottom: 5px;
@@ -118,6 +118,7 @@
   background-color: #1025a1;
   color: #EFFFFD;
   border: 0px;
+  margin-top: 10px;
   border-radius: 4px;
   padding: 8px 16px;
   width: 100%;

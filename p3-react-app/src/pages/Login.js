@@ -18,8 +18,11 @@ const Login = () => {
     e.preventDefault();
     if ( username === 'admin' && password === '1234'){  
       navigate('/sikretongmalupet');
+    }else if
+      (username === '' || password === ''){
+        alert('Must enter a valid input!');
     }else {
-      alert('Incorrect username or password');
+      alert('Incorrect username or password!');
       setPassword('');
       setUsername('');
     }
@@ -63,6 +66,7 @@ const Login = () => {
               <input 
                 type='text'
                 value={username}
+                required
                 onChange={(e) => setUsername(e.target.value)}
               ></input>
               <label>Password:</label>
@@ -70,6 +74,7 @@ const Login = () => {
                 type='password'
                 value={password}
                 autoComplete='on'
+                required
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
 
