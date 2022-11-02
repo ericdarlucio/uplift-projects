@@ -14,6 +14,7 @@ const TrackingForm = () => {
           <input 
             type='text'
             value={trackingNumber}
+            placeholder='XXXXXXXXXXX'
             onChange={(e) => setTrackingNumber(e.target.value)}
           ></input>
 
@@ -25,11 +26,13 @@ const TrackingForm = () => {
               } else {
                 navigate('/customer/order', {state: {id: trackingNumber}});
               }
-            }
-            
-            }
+            }}
           >Track Order</button>
+
+          <img src={require('../images/tracking.png')} alt='tracking'></img>
+
         </form>
+
 
       </div>
   )
