@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 
-import './Admin.css'
+import './Admin.css';
+import Footer from '../components/Footer';
+
 
 import OrderCard from "../components/OrderCard";
 
@@ -23,101 +25,113 @@ const Admin = () => {
   return (
     <div className="Admin-container">
 
-      <Link to='/'><span>Log out</span></Link>
+      <div className='Admin-header'>
+        <img 
+          className='Admin-logo'
+          src={require('../images/logo.png')}
+          alt='logo' 
+        />
+        <Link to='/'>
+          <button
+            className='Admin-logout-button'
+          >Logout</button>
+        </Link>
+      </div>
 
-      <br></br>
+      <div className="Admin-content">
 
-      <div>Orders Dashboard</div>
+        <div className="Admin-status-container">
 
-      <br></br>
+          <div
+            className="Admin-status-pending"
+            onClick={() => {
+              setShowPending(true);
+              setShowCollected(false);
+              setShowDispatched(false);
+              setShowDelivered(false);
+            }}
+          >Pending</div> |
 
-      <div className="Admin-status-container">
+          <div 
+            className="Admin-status-collected"
+            onClick={() => {
+              setShowPending(false);
+              setShowCollected(true);
+              setShowDispatched(false);
+              setShowDelivered(false);
+            }}
+          >Collected</div> |
+          
+          <div 
+            className="Admin-status-dispatched"
+            onClick={() => {
+              setShowPending(false);
+              setShowCollected(false);
+              setShowDispatched(true);
+              setShowDelivered(false);
+            }}
+          >Dispatched</div> |
 
-        <div
-          className="Admin-status-pending"
-          onClick={() => {
-            setShowPending(true);
-            setShowCollected(false);
-            setShowDispatched(false);
-            setShowDelivered(false);
-          }}
-        >Pending</div> |
+          <div
+            className="Admin-status-completed"
+            onClick={() => {
+              setShowPending(false);
+              setShowCollected(false);
+              setShowDispatched(false);
+              setShowDelivered(true);
+            }}
+          >Delivered</div>
 
-        <div 
-          className="Admin-status-collected"
-          onClick={() => {
-            setShowPending(false);
-            setShowCollected(true);
-            setShowDispatched(false);
-            setShowDelivered(false);
-          }}
-        >Collected</div> |
-        
-        <div 
-          className="Admin-status-dispatched"
-          onClick={() => {
-            setShowPending(false);
-            setShowCollected(false);
-            setShowDispatched(true);
-            setShowDelivered(false);
-          }}
-        >Dispatched</div> |
+        </div>
 
-        <div
-          className="Admin-status-completed"
-          onClick={() => {
-            setShowPending(false);
-            setShowCollected(false);
-            setShowDispatched(false);
-            setShowDelivered(true);
-          }}
-        >Delivered</div>
+        <div className="Admin-cards-container">
+          {
+            showPending &&
+            <>
+              <span>Total: {pendingOrders.length}</span>
+              {
+                pendingOrders.map( order => {
+                return <OrderCard key={order.firstName} array={order} />
+                })
+              }
+            </>
+          }
+          {
+            showCollected &&
+            <>
+              <span>Total: {collectedOrders.length}</span>
+              {collectedOrders.map( order => {
+                return <OrderCard key={order.firstName} array={order} />
+              })}
+            </>
+          }
+          {
+            showDispatched &&
+            <>
+              <span>Total: {dispatchedOrders.length}</span>
+              {dispatchedOrders.map( order => {
+                return <OrderCard key={order.firstName} array={order} />
+              })}
+            </>
+          }
+          {
+            showDelivered &&
+            <>
+              <span>Total: {deliveredOrders.length}</span>
+              {deliveredOrders.map( order => {
+                return <OrderCard key={order.firstName} array={order} />
+              })}
+            </>
+          }
+        </div>
 
       </div>
 
-      {
-        showPending &&
-        <>
-          <div>Total: {pendingOrders.length}</div>
-          {
-            pendingOrders.map( order => {
-            return <OrderCard key={order.firstName} array={order} />
-            })
-          }
-        </>
-      }
-
-      {
-        showCollected &&
-        <>
-          <p>Total: {collectedOrders.length}</p>
-          {collectedOrders.map( order => {
-            return <OrderCard key={order.firstName} array={order} />
-          })}
-        </>
-      }
-
-      {
-        showDispatched &&
-        <>
-          <p>Total: {dispatchedOrders.length}</p>
-          {dispatchedOrders.map( order => {
-            return <OrderCard key={order.firstName} array={order} />
-          })}
-        </>
-      }
-
-      {
-        showDelivered &&
-        <>
-          <p>Total: {deliveredOrders.length}</p>
-          {deliveredOrders.map( order => {
-            return <OrderCard key={order.firstName} array={order} />
-          })}
-        </>
-      }
+      <Footer />
 
     </div>
+
+      
   )
 }
 
