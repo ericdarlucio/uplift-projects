@@ -36,10 +36,14 @@
 }
 
 .Admin-status-container {
+  position: sticky;
+  top: 0;
+  background-color: #EFFFFD;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 5px;
+  padding: 10px 0px
 }
 
 .Admin-status-pending,
