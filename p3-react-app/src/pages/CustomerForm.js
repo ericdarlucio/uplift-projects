@@ -8,10 +8,10 @@ import './CustomerForm.css';
 const CustomerForm = () => {
 	const [ fname, setFirstName ] = useState('');
 	const [ lname, setLastName ] = useState('');
-	const [ contactNo, setContactNo ] = useState(0);
+	const [ contactNo, setContactNo ] = useState('');
 	const [ stAddress, setStreetAddress ] = useState('');
 	const [ brgy, setBarangay ] = useState('Amanoaoac');
-  const [ waterOrder, setWaterOrder ] = useState(0);
+  const [ waterOrder, setWaterOrder ] = useState(1);
   const [ showConfirmation, setShowConfirmation ] = useState(false);
   const orderId = uuidv4().split('-')[4];
   const navigate = useNavigate();

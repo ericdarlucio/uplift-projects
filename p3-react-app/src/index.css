@@ -9,3 +9,12 @@ body {
   background-color: #EFFFFD;
   background-image: url('./images/background.png');
 }
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+  /* if the screen has width from 768 to 991px*/
+}
+
+
+@media only screen and (min-width: 992px){ 
+  /* if the screen has width <= 767px*/
+}

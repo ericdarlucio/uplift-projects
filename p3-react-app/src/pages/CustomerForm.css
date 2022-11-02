@@ -35,3 +35,31 @@
   border: 2px solid black;
   padding: 10px;
 }
+
+.CustomerForm-container form label {
+  font-size: 12px;
+}
+
+.CustomerForm-container form input,
+.CustomerForm-container form select {
+  font-size: 16px;
+  background-color: #EEF1FF;
+  padding: 3px;
+  margin-bottom: 10px;
+  border: 1px solid #1025a1;
+  border-radius: 4px;
+  color: #1025a1;
+}
+
+::placeholder {
+  color: #B1B2FF;
+}
+
+.CustomerForm-container form button {
+  font-size: 14px;
+  background-color: #1025a1;
+  color: #EFFFFD;
+  border: 0px;
+  border-radius: 4px;
+  padding: 8px 16px;
+}
