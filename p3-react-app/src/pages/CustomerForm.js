@@ -128,26 +128,29 @@ const CustomerForm = () => {
         <div className='CustomerForm-confirmation-modal'>
 
           <div className='CustomerForm-confirmation-modal-content'>
-            <h1>Hello, please confirm your order details</h1>
-            <p>First name: <span style={{color: 'blue'}}>{fname}</span></p>
-            <p>Last name: <span style={{color: 'blue'}}>{lname}</span></p>
-            <p>Contact no.: <span style={{color: 'blue'}}>{contactNo}</span></p>
-            <p>Street address: <span style={{color: 'blue'}}>{stAddress}</span></p>
-            <p>Barangay: <span style={{color: 'blue'}}>{brgy}</span></p>
-            <p>Number of orders: <span style={{color: 'blue'}}>{waterOrder}</span></p>
+            <h3>Order Summary: </h3>
+            <p>First Name: <span>{fname}</span></p>
+            <p>Last Name: <span>{lname}</span></p>
+            <p>Contact No.: <span>{contactNo}</span></p>
+            <p>Street Address: <span>{stAddress}</span></p>
+            <p>Barangay: <span>{brgy}</span></p>
+            <p>Number Of Orders: <span>{waterOrder}</span></p>
 
-            <button
-              onClick={() => setShowConfirmation(!showConfirmation)}
-            >Cancel</button>
+            <div className='CustomerForm-button-container'>
+              <button
+                onClick={() => setShowConfirmation(!showConfirmation)}
+              >Cancel</button>
 
-            <button
-              type='submit'
-              onClick={(e) => {
-                e.preventDefault()
-                submitOrder();
-                setShowConfirmation(!showConfirmation);
-              }}
-            >Confirm</button>
+              <button
+                type='submit'
+                onClick={(e) => {
+                  e.preventDefault()
+                  submitOrder();
+                  setShowConfirmation(!showConfirmation);
+                }}
+              >Confirm</button>
+            </div>
+
           </div>
 
         </div>

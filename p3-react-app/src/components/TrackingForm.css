@@ -44,6 +44,7 @@
 }
 
 .TrackingForm-container img {
+  width: 200px;
   padding: 5px 12px;
   align-self: center;
 }
