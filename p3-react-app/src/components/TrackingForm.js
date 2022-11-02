@@ -11,6 +11,7 @@ const TrackingForm = () => {
       <div className="TrackingForm-container">
 
         <form>
+          <label>Enter Order ID:</label>
           <input 
             type='text'
             value={trackingNumber}

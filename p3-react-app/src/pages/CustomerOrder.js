@@ -18,9 +18,9 @@ const CustomerOrder = () => {
       <Header />
 
 
-      <div className="CustomerOrder-content">
+      <div className="CustomerOrder-content ">
         
-        <h3>Order Id: {location.state.id}</h3>
+        <h3>Order ID: {location.state.id}</h3>
 
         {
           ordersId.includes(location.state.id) &&

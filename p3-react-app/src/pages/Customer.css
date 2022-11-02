@@ -36,12 +36,13 @@
 .Customer-content-tab-inactive {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  border-bottom: 1px solid #1025a1;
+  border-bottom: 2px solid #1025a1;
 }
 
 .Customer-content-tab-active {
-  border: 1px solid #1025a1;
+  border: 2px solid #1025a1;
   border-bottom: 0px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  font-weight: bold;
 }

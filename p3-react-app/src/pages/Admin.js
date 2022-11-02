@@ -12,10 +12,7 @@ const Admin = () => {
 
   const orders = useSelector(state => state.allOrders);
 
-  const [ showPending, setShowPending ] = useState(true);
-  const [ showCollected, setShowCollected ] = useState(false);
-  const [ showDispatched, setShowDispatched ] = useState(false);
-  const [ showDelivered, setShowDelivered ] = useState(false);
+  const [ selected, setSelected ] = useState(1);
 
   const pendingOrders = orders.filter( order => order.status === 'pending' );
   const collectedOrders = orders.filter( order => order.status === 'collected' );
@@ -38,55 +35,51 @@ const Admin = () => {
         </Link>
       </div>
 
+
       <div className="Admin-content">
+
 
         <div className="Admin-status-container">
 
-          <div
-            className="Admin-status-pending"
-            onClick={() => {
-              setShowPending(true);
-              setShowCollected(false);
-              setShowDispatched(false);
-              setShowDelivered(false);
-            }}
-          >Pending</div> |
+          <h2>Orders Dashboard</h2>
 
-          <div 
-            className="Admin-status-collected"
-            onClick={() => {
-              setShowPending(false);
-              setShowCollected(true);
-              setShowDispatched(false);
-              setShowDelivered(false);
-            }}
-          >Collected</div> |
+          <div className="Admin-status-selection">
+
+            <button
+              className={ selected === 1 ? 'Admin-status-selection-active' : 'Admin-status-selection-inactive'}
+              onClick={() => {
+                setSelected(1);
+              }}
+            >Pending</button> |
+
+            <button 
+              className={ selected === 2 ? 'Admin-status-selection-active' : 'Admin-status-selection-inactive'}
+              onClick={() => {
+                setSelected(2);
+              }}
+            >Collected</button> |
+            
+            <button 
+              className={ selected === 3 ? 'Admin-status-selection-active' : 'Admin-status-selection-inactive'}
+              onClick={() => {
+                setSelected(3);
+              }}
+            >Dispatched</button> |
+
+            <button
+              className={ selected === 4 ? 'Admin-status-selection-active' : 'Admin-status-selection-inactive'}
+              onClick={() => {
+                setSelected(4);
+              }}
+            >Delivered</button>
           
-          <div 
-            className="Admin-status-dispatched"
-            onClick={() => {
-              setShowPending(false);
-              setShowCollected(false);
-              setShowDispatched(true);
-              setShowDelivered(false);
-            }}
-          >Dispatched</div> |
-
-          <div
-            className="Admin-status-completed"
-            onClick={() => {
-              setShowPending(false);
-              setShowCollected(false);
-              setShowDispatched(false);
-              setShowDelivered(true);
-            }}
-          >Delivered</div>
+          </div>
 
         </div>
 
         <div className="Admin-cards-container">
           {
-            showPending &&
+            selected === 1 &&
             <>
               <span>Total: {pendingOrders.length}</span>
               {
@@ -97,7 +90,7 @@ const Admin = () => {
             </>
           }
           {
-            showCollected &&
+            selected === 2 &&
             <>
               <span>Total: {collectedOrders.length}</span>
               {collectedOrders.map( order => {
@@ -106,7 +99,7 @@ const Admin = () => {
             </>
           }
           {
-            showDispatched &&
+            selected === 3 &&
             <>
               <span>Total: {dispatchedOrders.length}</span>
               {dispatchedOrders.map( order => {
@@ -115,7 +108,7 @@ const Admin = () => {
             </>
           }
           {
-            showDelivered &&
+            selected === 4 &&
             <>
               <span>Total: {deliveredOrders.length}</span>
               {deliveredOrders.map( order => {
