@@ -22,7 +22,6 @@
 .CustomerForm-container form input,
 .CustomerForm-container form select {
   font-size: 16px;
-  background-color: #EEF1FF;
   padding: 5px;
   margin-bottom: 10px;
   border: 1px solid #1025a1;
@@ -98,4 +97,10 @@
   color: #1025a1;
   text-align: left;
   margin-bottom: 3px;
+}
+
+.CustomerForm-button-container button:hover,
+.CustomerForm-container button:hover {
+  cursor: pointer;
+  background-color: #067fb7;
 }

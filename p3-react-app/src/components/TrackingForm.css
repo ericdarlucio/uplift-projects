@@ -21,7 +21,6 @@
 
 .TrackingForm-container form input{
   font-size: 16px;
-  background-color: #EEF1FF;
   padding: 5px;
   margin-bottom: 10px;
   border: 1px solid #1025a1;
@@ -47,4 +46,9 @@
   width: 200px;
   padding: 10px 12px;
   align-self: center;
+}
+
+.TrackingForm-container button:hover {
+  cursor: pointer;
+  background-color: #067fb7;
 }

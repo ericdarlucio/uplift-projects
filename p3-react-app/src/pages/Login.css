@@ -83,7 +83,7 @@
   position: fixed;
   border: 2px solid #1025a1;
   border-radius: 5px;
-  padding: 40px 30px;
+  padding: 20px;
 }
 
 .Login-modal form {
@@ -107,7 +107,7 @@
   font-size: 13px;
   background-color: #EEF1FF;
   padding: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   border: 1px solid #1025a1;
   border-radius: 4px;
   color: #1025a1;
@@ -124,7 +124,7 @@
 }
 
 .Login-button-container {
-  margin-top: 5px;
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
   gap: 5px;
@@ -134,4 +134,11 @@
   text-align: left;
   margin-bottom: 0px;
   color: #1025a1;
+}
+
+.Login-login-button:hover,
+.Login-button-container button:hover,
+.Login-start-button:hover {
+  cursor: pointer;
+  background-color: #067fb7;
 }

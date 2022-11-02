@@ -22,3 +22,8 @@
   padding: 8px 16px;
   margin-bottom: 5px;
 }
+
+.OrderCard-container button:hover {
+  cursor: pointer;
+  background-color: #067fb7;
+}

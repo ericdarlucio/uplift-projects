@@ -81,5 +81,17 @@
 }
 
 .Admin-status-selection-inactive {
+  position: relative;
+  top: 0;
+}
 
+.Admin-logout-button:hover {
+  cursor: pointer;
+  background-color: #067fb7;
+}
+
+.Admin-status-selection-inactive:hover {
+  position: relative;
+  top: -2px;
+  transition: top ease 0.3s;
 }
