@@ -48,6 +48,7 @@ const CustomerForm = () => {
         id: orderId,
         status: 'pending'
       }});
+    alert(`Your order has been submitted. Your order id: ${orderId} has been sent to your mobile number. `);
     navigate('/customer/order', {state: {id: orderId}});
   } 
 
