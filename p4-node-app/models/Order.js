@@ -7,7 +7,12 @@ const OrderSchema = new mongoose.Schema({
     streetNum: String,
     streetName: String,
     barangay: String,
-    orderQty: Number
+    orderQty: Number,
+    orderStatus: String,
+    delivery: {
+      type: mongoose.Types.ObjectId,
+      ref: 'Delivery'
+    }
   },
   { timestamps: {
       createdAt: 'dateCreated',

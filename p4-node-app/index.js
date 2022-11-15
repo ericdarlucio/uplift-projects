@@ -14,16 +14,18 @@ server.use(morgan('dev'));
 server.use(helmet());
 
 server.get('/', (request, response) => {
-  response.send('Welcome to express!');
+  response.send('Welcome to ExpressJS!');
 });
 
 // Router
 const OrderRouter = require('./routes/orders');
 const AuthRouter = require('./routes/auth');
+const DeliveryRouter = require('./routes/deliveries')
 
 // Router Endpoints
 server.use('/api/v1/orders', OrderRouter);
 server.use('/api/v1/auth', AuthRouter);
+server.use('/api/v1/deliveries', DeliveryRouter);
 
 
 //MongoDB Connect

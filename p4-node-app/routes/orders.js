@@ -7,14 +7,14 @@ const Order = require('../models/Order');
 
 // CRUD
 
-//READ
+//Read
 router.get('/', (request, response) => {
   Order.find().then( result => {
     response.send(result);
   });
 });
 
-//CREATE
+//Create
 router.post('/', (request, response) => {
   let newOrder = new Order(request.body);
   newOrder.save().then( result => {
@@ -22,7 +22,7 @@ router.post('/', (request, response) => {
   });
 });
 
-//UPDATE
+//Update
 router.put('/:id', (request, response) => {
   const orderId = request.params.id;
   Order.updateOne(
@@ -35,7 +35,7 @@ router.put('/:id', (request, response) => {
   });
 });
 
-//DELETE
+//Delete
 router.delete('/:id', (request, response) => {
   const orderId = request.params.id;
   Order.deleteOne({_id: orderId}).then( result => {
