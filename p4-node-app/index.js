@@ -1,6 +1,7 @@
 const express = require('express');
 const server = express();
 const mongoose = require('mongoose'); 
+const morgan = require('morgan')
 const port = 8080;
 const OrderRouter = require('./routes/orders');
 const bodyParser = require('body-parser');
@@ -12,6 +13,7 @@ server.get('/', (request, response) => {
 
 server.use(bodyParser.json());
 server.use(cors());
+server.use(morgan('dev'));
 
 server.use('/api/v1/orders', OrderRouter);
 

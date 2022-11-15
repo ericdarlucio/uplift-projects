@@ -12,9 +12,10 @@ router.get('/', (request, response) => {
 
 router.post('/', (request, response) => {
   let newOrder = new Order(request.body);
-  newOrder.save();
-  Order.find().then( result => {
-    response.send(result);
+  newOrder.save().then( result => {
+    Order.find().then( result => {
+      response.send(result);
+    });
   });
 });
 
