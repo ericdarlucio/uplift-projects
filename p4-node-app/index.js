@@ -10,12 +10,12 @@ server.get('/', (request, response) => {
   response.send('Welcome to express!');
 });
 
+server.use(bodyParser.json());
+server.use(cors());
+
 server.use('/api/v1/orders', OrderRouter);
 
 mongoose.connect('mongodb://localhost:27017/water-deliverydb');
-
-server.use(bodyParser.json());
-server.use(cors());
 
 server.listen(port, (request, response) => {
   console.log('Listening on port', port);
