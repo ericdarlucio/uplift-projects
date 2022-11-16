@@ -12,10 +12,16 @@ router.post('/admin-register', async (request, response) => {
     ...request.body,
     password: hashedPassword
   });
-  newAdmin.save().then( result => {
-    console.log(result);
-    response.status(201).send({ status: 'Admin has been created'});
-  });
+
+  const checkUsername = await Admin.findOne({username: request.body.username});
+  if (checkUsername){
+    return response.send({ status: 'Username already used. Use a different username'});
+  } else {
+    newAdmin.save().then( result => {
+      console.log(result);
+      response.status(201).send({ status: 'New admin account has been created'});
+    });
+  }
 });
 
 // Admin login
