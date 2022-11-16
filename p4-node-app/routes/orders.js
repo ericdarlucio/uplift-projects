@@ -7,14 +7,7 @@ const Order = require('../models/Order');
 
 // CRUD
 
-//Read
-router.get('/', (request, response) => {
-  Order.find().then( result => {
-    response.status(200).send(result);
-  });
-});
-
-//Create
+// Create a new order
 router.post('/', (request, response) => {
   let newOrder = new Order(request.body);
   newOrder.save().then( result => {
@@ -22,7 +15,14 @@ router.post('/', (request, response) => {
   });
 });
 
-//Update
+// Return all orders
+router.get('/', (request, response) => {
+  Order.find().then( result => {
+    response.status(200).send(result);
+  });
+});
+
+// Update orderStatus and soft deletion
 router.put('/:id', (request, response) => {
   const orderId = request.params.id;
   Order.updateOne(
@@ -30,12 +30,12 @@ router.put('/:id', (request, response) => {
     { $set: {...request.body} }
   ).then(result => {
     if(result.modifiedCount === 1){
-      response.status(200).send({ status: "Order has been updated" });
+      response.status(200).send({ status: "Order status has been updated" });
     };
   });
 });
 
-//Delete
+// Hard delete order
 router.delete('/:id', (request, response) => {
   const orderId = request.params.id;
   Order.deleteOne({_id: orderId}).then( result => {

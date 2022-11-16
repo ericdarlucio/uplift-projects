@@ -6,26 +6,41 @@ const Delivery = require('../models/Delivery');
 
 // CRUD
 
-// Return all deliveries
+// Return all deliveries with barangay and quantity
 router.get('/', (request, response) => {
-  Delivery.find().then( result => {
-    response.status(200).send(result);
-  });
-});
-
-// Return all orders on a single delivery
-router.get('/:id/orders', (request, response) => {
-  Delivery.findOne(
-    {_id: request.params.id},
-    {orders: 1}
-  )
-  .populate('orders')
+  Delivery.find()
+  .populate('orders',{
+    _id: 0,
+    barangay: 1,
+    orderQty: 1
+  })
   .then( result => {
     response.status(200).send(result);
   });
 });
 
-// Create
+// Return all orders on a single delivery
+router.get('/:id', (request, response) => {
+  Delivery.findOne(
+    {_id: request.params.id},
+    {orders: 1}
+  )
+  .populate('orders', {
+    _id: 0,
+    firstName: 1,
+    lastName: 1,
+    contactNum: 1,
+    streetNum: 1,
+    streetName: 1,
+    barangay: 1,
+    orderQty: 1
+  })
+  .then( result => {
+    response.status(200).send(result);
+  });
+});
+
+// Create new delivery
 router.post('/', (request, response) => {
   let newDelivery = new Delivery(request.body);
   newDelivery.save().then( result => {
@@ -33,7 +48,7 @@ router.post('/', (request, response) => {
   });
 });
 
-// Update
+// Update delivery status, populate with orders and soft deletion
 router.put('/:id', (request, response) => {
   const deliveryId = request.params.id;
   Delivery.updateOne(
@@ -46,7 +61,7 @@ router.put('/:id', (request, response) => {
   });
 });
 
-// Delete
+// Hard delete a delivery
 router.delete('/:id', (request, response) => {
   const deliveryId = request.params.id;
   Delivery.deleteOne({_id: deliveryId}).then( result => {

@@ -7,8 +7,8 @@ const DeliverySchema = new mongoose.Schema({
   ]
 },
 { timestamps: {
-    createdAt: 'dateCreated',
-    updatedAt: false
+    createdAt: 'deliveryCreated',
+    updatedAt: 'deliveryUpdated'
 }, versionKey: false }
 );
 

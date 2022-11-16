@@ -9,14 +9,10 @@ const OrderSchema = new mongoose.Schema({
     barangay: String,
     orderQty: Number,
     orderStatus: String,
-    delivery: {
-      type: mongoose.Types.ObjectId,
-      ref: 'Delivery'
-    }
   },
   { timestamps: {
-      createdAt: 'dateCreated',
-      updatedAt: 'dateUpdated'
+      createdAt: 'orderCreated',
+      updatedAt: 'orderUpdated'
   }, versionKey: false }
 );
 
