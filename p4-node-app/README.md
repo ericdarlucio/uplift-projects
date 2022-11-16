@@ -46,7 +46,7 @@ _The app functionalities are:_
 
 ## ADMIN
 REGISTER NEW ADMIN - /api/v1/auth/admin-register \
-LOGIN AUTHENTICATION - /api/v1/auth/admin-login \
+LOGIN AUTHENTICATION - /api/v1/auth/admin-login
 
 
 ## ORDERS
