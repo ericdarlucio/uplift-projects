@@ -9,7 +9,7 @@ const Delivery = require('../models/Delivery');
 // Return all deliveries
 router.get('/', (request, response) => {
   Delivery.find().then( result => {
-    response.send(result);
+    response.status(200).send(result);
   });
 });
 
@@ -21,7 +21,7 @@ router.get('/:id/orders', (request, response) => {
   )
   .populate('orders')
   .then( result => {
-    response.send(result);
+    response.status(200).send(result);
   });
 });
 
@@ -29,7 +29,7 @@ router.get('/:id/orders', (request, response) => {
 router.post('/', (request, response) => {
   let newDelivery = new Delivery(request.body);
   newDelivery.save().then( result => {
-      response.send(result);
+      response.status(201).send(result);
   });
 });
 
@@ -41,7 +41,7 @@ router.put('/:id', (request, response) => {
     { $set: {...request.body} }
   ).then(result => {
     if(result.modifiedCount === 1){
-      response.send({ status: "Delivery has been updated" });
+      response.status(200).send({ status: "Delivery has been updated" });
     };
   });
 });
@@ -51,7 +51,7 @@ router.delete('/:id', (request, response) => {
   const deliveryId = request.params.id;
   Delivery.deleteOne({_id: deliveryId}).then( result => {
     if( result.deletedCount === 1 ){
-        response.send({status: "Delivery has been deleted"});
+        response.status(200).send({status: "Delivery has been deleted"});
     }
   });
 });

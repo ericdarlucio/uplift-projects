@@ -10,7 +10,7 @@ const Order = require('../models/Order');
 //Read
 router.get('/', (request, response) => {
   Order.find().then( result => {
-    response.send(result);
+    response.status(200).send(result);
   });
 });
 
@@ -18,7 +18,7 @@ router.get('/', (request, response) => {
 router.post('/', (request, response) => {
   let newOrder = new Order(request.body);
   newOrder.save().then( result => {
-      response.send(result);
+      response.status(201).send(result);
   });
 });
 
@@ -30,7 +30,7 @@ router.put('/:id', (request, response) => {
     { $set: {...request.body} }
   ).then(result => {
     if(result.modifiedCount === 1){
-      response.send({ status: "Order has been updated" });
+      response.status(200).send({ status: "Order has been updated" });
     };
   });
 });
@@ -40,7 +40,7 @@ router.delete('/:id', (request, response) => {
   const orderId = request.params.id;
   Order.deleteOne({_id: orderId}).then( result => {
     if( result.deletedCount === 1 ){
-        response.send({status: "Order has been deleted"});
+        response.status(200).send({status: "Order has been deleted"});
     }
   });
 });

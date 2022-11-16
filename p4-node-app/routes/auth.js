@@ -14,7 +14,7 @@ router.post('/admin-register', async (request, response) => {
   });
   newAdmin.save().then( result => {
     console.log(result);
-    response.send({ status: 'Admin has been created'});
+    response.status(201).send({ status: 'Admin has been created'});
   });
 });
 
@@ -23,19 +23,19 @@ router.post('/admin-login', (request, response) => {
 
   Admin.findOne({ username: request.body.username }).then( result => {
     if (result === null){
-      response.send({
+      response.status(404).send({
         status: "Invalid credentials"
       }
       );
     }else{
       bcrypt.compare( request.body.password, result.password, (error, match) => {
         if ( match ){
-          response.send({
+          response.status(200).send({
             status: 'Valid credentials',
             id: result._id
           });
         }else{
-          response.send({
+          response.status(404).send({
             status: "Invalid credentials"
           })
         };
