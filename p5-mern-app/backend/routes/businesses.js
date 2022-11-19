@@ -1,8 +1,11 @@
 const express = require('express');
-const router = express();
+const router = express.Router();
 
 const Business = require('../models/Business');
 
-router.get('/', (request, ))
+router.post('/', (request, response) => {});
+router.get('/', (request, response) => {});
+router.put('/', (request, response) => {});
+router.delete('/', (request, response) => {});
 
 module.exports = router;

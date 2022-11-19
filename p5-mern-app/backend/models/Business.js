@@ -1,4 +1,4 @@
-const mongoose = require(mongoose);
+const mongoose = require('mongoose');
 
 const BusinessSchema = new mongoose.Schema({
   
@@ -12,7 +12,7 @@ const BusinessSchema = new mongoose.Schema({
     streetNumber: String,
     streetName: String,
     barangay: String,
-    longiture: String,
+    longitude: String,
     latitude: String
   },
   contactNumber: String,
