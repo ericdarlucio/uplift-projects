@@ -1,6 +1,11 @@
+import Header from "../components/Header";
+
 const Register = () => {
   return (
-    <div>Register</div>
+    <div>
+      <Header/>
+      Register
+    </div>
   )
 };
 

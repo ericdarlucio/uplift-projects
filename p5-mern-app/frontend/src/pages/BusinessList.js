@@ -1,6 +1,11 @@
+import Header from "../components/Header";
+
 const BusinessList = () => {
   return (
-    <div>BusinessList</div>
+    <div>
+      <Header/>
+      BusinessList
+    </div>
   )
 };
 

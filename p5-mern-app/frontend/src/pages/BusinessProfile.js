@@ -1,6 +1,11 @@
+import Header from "../components/Header";
+
 const BusinessProfile = () => {
   return (
-    <div>BusinessProfile</div>
+    <div>
+      <Header/>
+      BusinessProfile
+    </div>
   )
 };
 

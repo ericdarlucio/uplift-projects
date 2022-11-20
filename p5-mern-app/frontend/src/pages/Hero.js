@@ -1,6 +1,11 @@
+import Header from "../components/Header";
+
 const Hero = () => {
   return (
-    <div>Hero</div>
+    <div>
+      <Header/>
+      Hero
+    </div>
   )
 };
 

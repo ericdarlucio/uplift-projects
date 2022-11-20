@@ -5,6 +5,9 @@ import Hero from './pages/Hero';
 import Login from './pages/Login';
 import Register from './pages/Register';
 
+import axios from 'axios';
+import { useEffect } from 'react';
+
 
 const App = () => {
 
