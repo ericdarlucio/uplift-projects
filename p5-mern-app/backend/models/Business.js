@@ -19,6 +19,6 @@ const BusinessSchema = new mongoose.Schema({
     { type: mongoose.Types.ObjectId, ref: 'Review'}
   ]
 
-});
+}, { versionKey: false } );
 
 module.exports = mongoose.model('Business', BusinessSchema);

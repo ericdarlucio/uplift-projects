@@ -12,8 +12,16 @@ router.post('/register', async (request, response) => {
 		businessStatus: 'active',
 		password: hashedPassword,
 	});
-	const result = await newBusiness.save();
-	response.status(201).send(result);
+
+	const checkEmail = await Business.findOne({email: request.body.email});
+
+  if (checkEmail){
+    return response.send({ status: 'Email already used. Use a different email'});
+  } else {
+    newBusiness.save().then( result => {
+      response.status(201).send({ status: 'New business has been registered'});
+    });
+  };
 });
 
 // Business login
@@ -21,7 +29,7 @@ router.post('/login', async (request, response) => {
 	const result = await Business.findOne({ email: request.body.email });
 	if (result === null) {
 		response.status(404).send({
-			status: 'Invalid username or password',
+			status: 'Invalid email or password',
 		});
 	} else {
 		bcrypt.compare(request.body.password, result.password, (error, match) => {
@@ -32,7 +40,7 @@ router.post('/login', async (request, response) => {
 				});
 			} else {
 				response.status(404).send({
-					status: 'Invalid username or password',
+					status: 'Invalid email or password',
 				});
 			}
 		});
@@ -41,22 +49,31 @@ router.post('/login', async (request, response) => {
 
 // Show active businesses
 router.get('/', async (request, response) => {
-	const result = await Business.find({ businessStatus: 'active' });
+	const result = await Business.find({ businessStatus: 'active' },{
+    businessName: 1,
+    businessCategory: 1,
+    contactNumber: 1,
+    streetNumber: 1,
+    streetName: 1,
+    barangay: 1
+  });
 	response.status(200).send(result);
 });
 
 // Show one business by business._id
-router.get('/:id', async (request, response) => {
-  const businessId = request.params.id;
-	const result = await Business.findOne(
-    { _id: businessId }
-  ).populate('reviews');
+router.get('/:businessId', async (request, response) => {
+  const businessId = request.params.businessId;
+	const result = await Business.findOne({ _id: businessId }, {
+    password: 0,
+    businessStatus: 0
+  }
+  ).populate('reviews', { author: 1, comment: 1 });
 	response.status(200).send(result);
 });
 
 // Update business information
-router.put('/:id', async (request, response) => {
-  const businessId = request.params.id;
+router.put('/:businessId', async (request, response) => {
+  const businessId = request.params.businessId;
 	let result = await Business.updateOne(
     { _id: businessId },
     { $set: { ...request.body } }
@@ -68,9 +85,24 @@ router.put('/:id', async (request, response) => {
   };
 });
 
+
+// Add reviews to business profile
+router.put('/:businessId/reviews/:reviewId', async ( request, response ) => {
+  let businessId = request.params.businessId;
+  let reviewId = request.params.reviewId;
+  let result = await Business.updateOne(
+      { _id: businessId }, 
+      { $push: { reviews: reviewId }}
+  );
+  if( result.modifiedCount === 1 ){
+      response.send({ status: "Review has been added to the business profile" });
+  }
+});
+
+
 // Soft deletion or deactivate
-router.put('/:id/deactivate', async (request, response) => {
-  const businessId = request.params.id;
+router.put('/:businessId/deactivate', async (request, response) => {
+  const businessId = request.params.businessId;
 	let result = await Business.updateOne(
     { _id: businessId },
     { $set: { businessStatus: "inactive" } }
@@ -83,8 +115,8 @@ router.put('/:id/deactivate', async (request, response) => {
 });
 
 // Permanent delete
-router.delete('/:id/delete', async (request, response) => {
-  const businessId = request.params.id;
+router.delete('/:businessId/delete', async (request, response) => {
+  const businessId = request.params.businessId;
   let result = await Business.deleteOne(
     { _id: businessId }
   );

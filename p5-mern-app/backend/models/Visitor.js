@@ -7,6 +7,6 @@ const VisitorSchema = new mongoose.Schema({
   firstName: String,
   lastName: String
   
-});
+}, { versionKey: false } );
 
 module.exports = mongoose.model('Visitor', VisitorSchema);
