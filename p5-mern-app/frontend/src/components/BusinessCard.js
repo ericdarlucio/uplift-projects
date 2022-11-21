@@ -1,20 +1,26 @@
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-const BusinessCard = ({businesses}) => {
+const BusinessCard = ( {business} ) => {
 
-  const { email , businessName, businessCategory, contactNumber, streetNumber, streetName } = businesses;
-  console.log(businesses);
+  const dispatch = useDispatch();
 
   return (
     <div>
-      <Link to='/business-profile/' state={email}><strong>{businessName}</strong></Link>
+
+      <Link to='/business-profile' state={{business}}><strong>{business.businessName}</strong></Link>
       <br></br>
-      <span><em>{contactNumber}</em></span>
+      <span><em>{business.contactNumber}</em></span>
       <br></br>
-      <span><em>{streetNumber} {streetName}</em></span>
+      <span><em>{business.streetNumber} {business.streetName}</em></span>
       <br></br>
-      <span><em>{businessCategory}</em></span>
+      <span><em>{business.businessCategory}</em></span>
       <br></br>
+      <button
+          onClick = { () => dispatch( {type: 'DELETE_BUSINESS', payload: {_id: business._id}}) }
+      >Delete</button>
+
+
     </div>
   );
 };

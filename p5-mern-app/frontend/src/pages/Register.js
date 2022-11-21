@@ -18,10 +18,6 @@ const Register = () => {
 	const [ streetNumber, setStreetNo ] = useState('');
 	const [ streetName, setStreetName ] = useState('');
 	const [ barangay, setBarangay ] = useState('Amanoaoac');
-  
-  // Register as user
-  // const [ firstName, setFirstName ] = useState('');
-  // const [ lastName, setLastName ] = useState('');
 
   // Barangays in Mapandan
   const mapandanBarangays = [
@@ -77,8 +73,7 @@ const Register = () => {
 
       {/* Register your business */}
       <div className='Register-business-container'>
-        <form onSubmit={(e) => {
-            e.preventDefault();
+        <form onSubmit={() => {
             registerBusiness();
         }}>
 
@@ -167,14 +162,13 @@ const Register = () => {
             })}
           </select>
        
-          <button type='submit'>Place your order</button>
+          <button type='submit'>Register</button>
         </form>
       </div>
 
       <div className='Register-user-container'>
         
       </div>
-
     </div>
   )
 };

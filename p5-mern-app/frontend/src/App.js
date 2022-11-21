@@ -10,13 +10,13 @@ import Register from './pages/Register';
 
 const App = () => {
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); 
 
   useEffect(() => {
     axios.get('http://localhost:8080/api/v1/businesses').then(result => {
       dispatch({type: 'FETCH', payload: {data: result.data}});
     });
-  }, []);
+  });
 
   return (
     <div>
