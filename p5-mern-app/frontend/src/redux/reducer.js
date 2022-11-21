@@ -56,6 +56,17 @@ const reducer = ( state = initialState, action ) => {
         businesses: state.businesses.filter( business => business._id !== action.payload._id )
       });
 
+    case 'LOGIN_BUSINESS':
+
+      const loginCredentials = action.payload;
+      console.log(loginCredentials);
+
+      axios.post('http://localhost:8080/api/v1/businesses/login', loginCredentials).then(result => {
+        alert(result.data.status);
+      })
+
+      return state;
+
 
     default:
       return state;

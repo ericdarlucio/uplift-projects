@@ -40,6 +40,7 @@ const Login = () => {
           ></input>
 
           <button
+            type='button'
             onClick={() => { loginAuthentication() }}
           >Login</button>
 

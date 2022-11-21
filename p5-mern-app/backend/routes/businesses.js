@@ -28,7 +28,7 @@ router.post('/register', async (request, response) => {
 router.post('/login', async (request, response) => {
 	const result = await Business.findOne({ email: request.body.email });
 	if (result === null) {
-		response.status(404).send({
+		return response.send({
 			status: 'Invalid email or password',
 		});
 	} else {
@@ -39,7 +39,7 @@ router.post('/login', async (request, response) => {
 					id: result._id,
 				});
 			} else {
-				response.status(404).send({
+				return response.send({
 					status: 'Invalid email or password',
 				});
 			}

@@ -161,6 +161,7 @@ const Register = () => {
           </select>
        
           <button
+            type='button'
             onClick={() => { registerBusiness() }}
           >Register</button>
         </form>
