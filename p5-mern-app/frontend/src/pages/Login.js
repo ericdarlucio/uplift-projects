@@ -1,9 +1,11 @@
 import Header from "../components/Header";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 
 const Login = () => {
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
@@ -16,6 +18,7 @@ const Login = () => {
         email: email,
         password: password
     }});
+    navigate('/business-list');
   };
 
   return (

@@ -7,7 +7,6 @@ const BusinessProfile = () => {
 	const dispatch = useDispatch();
 	const location = useLocation();
 	const profile = location.state.business;
-	console.log(profile);
 
 	const [email, setEmail] = useState(profile.email);
 	const [streetName, setStreetName] = useState(profile.streetName);

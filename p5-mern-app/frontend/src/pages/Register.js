@@ -2,9 +2,11 @@ import './Register.css';
 import Header from "../components/Header";
 import { useState } from "react";
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
 
 const Register = () => {
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   // Register business or user
@@ -63,13 +65,12 @@ const Register = () => {
         streetName: streetName,
         barangay: barangay
     }});
+    navigate('/login');
   };
 
   return (
     <div>
       <Header/>
-      <button>Register your business</button>
-      <button>Sign up as user</button>
 
       {/* Register your business */}
       <div className='Register-business-container'>
@@ -159,6 +160,8 @@ const Register = () => {
               );
             })}
           </select>
+
+          <br></br>
        
           <button
             type='button'

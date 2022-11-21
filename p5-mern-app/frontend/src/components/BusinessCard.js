@@ -5,6 +5,15 @@ const BusinessCard = ( {business} ) => {
 
   const dispatch = useDispatch();
 
+  // Delete handler
+  const deleteBusiness = () => {
+    const answer = window.confirm("Are you sure?");
+    if (answer) {
+      dispatch( {type: 'DELETE_BUSINESS', payload: {_id: business._id}});
+    }
+  };
+
+
   return (
     <div>
 
@@ -17,7 +26,7 @@ const BusinessCard = ( {business} ) => {
       <span><em>{business.businessCategory}</em></span>
       <br></br>
       <button
-          onClick = { () => dispatch( {type: 'DELETE_BUSINESS', payload: {_id: business._id}}) }
+          onClick={() => { deleteBusiness() }}
       >Delete</button>
 
 

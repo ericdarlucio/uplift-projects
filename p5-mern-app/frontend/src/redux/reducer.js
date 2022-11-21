@@ -59,7 +59,6 @@ const reducer = ( state = initialState, action ) => {
     case 'LOGIN_BUSINESS':
 
       const loginCredentials = action.payload;
-      console.log(loginCredentials);
 
       axios.post('http://localhost:8080/api/v1/businesses/login', loginCredentials).then(result => {
         alert(result.data.status);
