@@ -73,9 +73,7 @@ const Register = () => {
 
       {/* Register your business */}
       <div className='Register-business-container'>
-        <form onSubmit={() => {
-            registerBusiness();
-        }}>
+        <form>
 
           <label>Email:</label>
           <input
@@ -162,7 +160,9 @@ const Register = () => {
             })}
           </select>
        
-          <button type='submit'>Register</button>
+          <button
+            onClick={() => { registerBusiness() }}
+          >Register</button>
         </form>
       </div>
 
