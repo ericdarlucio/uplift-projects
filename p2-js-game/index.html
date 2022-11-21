@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>JS Game</title>
+  <link rel='stylesheet' href='style.css'>
+  <script src='script.js' defer></script>
+</head>
+<body>
+  <main>
+
+    <div class='left-container'>
+      <h1 class='title'>CODE OR BURN</h1>
+      <p class='storyline'>Storyline:</p>
+      <p class='story'>Your main character JED is a programmer and a procrastinator with poor concentration. He knows it's a disaster! Games and social media sites consumes most of his time. Please help him avoid the obstacles that hinders him from being the best programmer that he can be.</p>
+      <p class='mobile-show'>
+        Play the game below!
+      </p>
+      <button class='instruction' onclick='instruction()'>How To Play?</button>
+      <div id='accordion' style='display: none;'>
+        <p>
+          Press the "SPACEBAR" or "CLICK" at the screen to jump up his coding knowledge and avoid touching the lava ground of complacency pulling him or the flames of distraction approaching him. Good luck and have fun!
+        </p>
+      </div>
+    </div>
+
+    <div class=right-container'>
+      <canvas id='canvas' height='440' width='288'></canvas>
+      <div class='button-container'>
+        <button id='play' onclick='play()'>Play!</button>
+        <button id='restart' onclick='restart()' style='display: none;'>Restart</button>
+        <button id='exit' onclick='exit()' style='display: none;'>Exit</button>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>
