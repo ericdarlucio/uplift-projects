@@ -15,30 +15,38 @@ const reducer = ( state = initialState, action ) => {
       });
 
     case 'REGISTER_BUSINESS':
-      const credentials = action.payload;
+      const registerCredentials = action.payload;
 
       // Backend
-      axios.post('http://localhost:8080/api/v1/businesses/register', credentials).then(result => {
+      axios.post('http://localhost:8080/api/v1/businesses/register', registerCredentials).then(result => {
         alert(result.data.status);
       });
 
       // Frontend
       return({ 
         ...state,
-        businesses: [ ...state.businesses, credentials] 
+        businesses: [ ...state.businesses, registerCredentials] 
       });
 
     case 'UPDATE_BUSINESS':
 
-      console.log(action.payload);
+      const updateCredentials = action.payload.business;
+      const updateId = action.payload._id;
+
+      // Backend
+      axios.put(`http://localhost:8080/api/v1/businesses/${updateId}`, updateCredentials).then(result => {
+        alert(result.data.status);
+      })
 
       //Frontend
       return state;
 
     case 'DELETE_BUSINESS':
+
+      const deleteId = action.payload._id;
       
       // Backend
-      axios.delete(`http://localhost:8080/api/v1/businesses/${action.payload._id}/delete`).then(result => {
+      axios.delete(`http://localhost:8080/api/v1/businesses/${deleteId}/delete`).then(result => {
         alert(result.data.status);
       });
 

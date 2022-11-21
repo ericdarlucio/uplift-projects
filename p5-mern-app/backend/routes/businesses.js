@@ -50,12 +50,7 @@ router.post('/login', async (request, response) => {
 // Show active businesses
 router.get('/', async (request, response) => {
 	const result = await Business.find({ businessStatus: 'active' },{
-    businessName: 1,
-    businessCategory: 1,
-    contactNumber: 1,
-    streetNumber: 1,
-    streetName: 1,
-    barangay: 1
+    password: 0
   });
 	response.status(200).send(result);
 });

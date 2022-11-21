@@ -30,13 +30,22 @@ const BusinessProfile = () => {
       <form
         onSubmit = { (e) => {
           e.preventDefault();
-          dispatch( {type: 'UPDATE_BUSINESS', payload: {
+          dispatch( {type: 'UPDATE_BUSINESS', payload: { _id: location.state.business._id, business: {
             streetName: streetName,
-            businessCategory: businessCategory
+            businessCategory: businessCategory,
+          }
           }}) ;
         }
         }
       >
+
+        <input
+          required
+          type='text'
+          placeholder='ex. Pico Avenue'
+          defaultValue={location.state.business.streetName}
+          onChange={(e) => setStreetName(e.target.value)}
+        ></input>
 
         <input
           required
@@ -67,15 +76,6 @@ const BusinessProfile = () => {
         >Save</button>
 
       </form>
-
-
-      {/* <button
-        type="submit"
-        onClick = { () => dispatch( {type: 'UPDATE_BUSINESS', payload: {
-          streetName: streetName,
-          businessCategory: businessCategory
-        }}) }
-      >Save</button> */}
       
     </div>
   )
