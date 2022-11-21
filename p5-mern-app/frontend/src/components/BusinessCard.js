@@ -1,10 +1,13 @@
-const BusinessCard = ({array}) => {
+const BusinessCard = ({businesses}) => {
 
-  const { businessName, businessCategory } = array;
+  const { businessName, businessCategory } = businesses;
 
   return (
     <div>
-      {businessName}{businessCategory}
+      <span><strong>{businessName}</strong></span>
+      <br></br>
+      <span><em>{businessCategory}</em></span>
+      <br></br>
     </div>
   );
 };

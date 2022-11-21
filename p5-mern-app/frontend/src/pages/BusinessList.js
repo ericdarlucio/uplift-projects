@@ -1,8 +1,5 @@
 import Header from "../components/Header";
-
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useState } from "react";
 import BusinessCard from "../components/BusinessCard";
 
 
@@ -13,8 +10,9 @@ const BusinessList = () => {
   return (
     <div>
       <Header/>
+      <hr></hr>
       {businesses.map(business => {
-        return <BusinessCard key={business._id} array={business}/>
+        return <BusinessCard key={business._id} businesses={business}/>
       })}
       
     </div>
