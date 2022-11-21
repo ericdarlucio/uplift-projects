@@ -7,25 +7,30 @@ const initialState = {
 const reducer = ( state = initialState, action ) => {
 
   switch( action.type ) {
+
     case 'FETCH':
-      return {
+      return ({
         ...state,
         businesses: action.payload.data
-      };
+      });
 
     case 'REGISTER_BUSINESS':
       const credentials = action.payload;
+
+      // Backend
       axios.post('http://localhost:8080/api/v1/businesses/register', credentials).then(result => {
         alert(result.data.status);
       });
 
-      return(
-        { businesses: [ ...state.businesses, credentials] }
-      );
+      // Frontend
+      return({ 
+        ...state,
+        businesses: [ ...state.businesses, credentials] 
+      });
 
     default:
       return state;
-  }
-}
+  };
+};
 
 export default reducer;

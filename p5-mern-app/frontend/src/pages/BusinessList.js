@@ -11,8 +11,8 @@ const BusinessList = () => {
     <div>
       <Header/>
       <hr></hr>
-      {businesses.map(business => {
-        return <BusinessCard key={business._id} businesses={business}/>
+      {businesses.sort().map(business => {
+        return <BusinessCard key={business.businessName} businesses={business}/>
       })}
       
     </div>

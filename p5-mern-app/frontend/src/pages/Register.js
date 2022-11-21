@@ -1,5 +1,4 @@
 import './Register.css';
-
 import Header from "../components/Header";
 import { useState } from "react";
 import { useDispatch } from 'react-redux';
@@ -15,10 +14,10 @@ const Register = () => {
   // Register your business
   const [ businessName, setBusinessName ] = useState('');
   const [ businessCategory, setBusinessCategory ] = useState('Construction');
-	const [ contactNo, setContactNo ] = useState('');
-	const [ stNo, setStreetNo ] = useState('');
-	const [ stName, setStreetName ] = useState('');
-	const [ brgy, setBarangay ] = useState('Amanoaoac');
+	const [ contactNumber, setContactNo ] = useState('');
+	const [ streetNumber, setStreetNo ] = useState('');
+	const [ streetName, setStreetName ] = useState('');
+	const [ barangay, setBarangay ] = useState('Amanoaoac');
   
   // Register as user
   // const [ firstName, setFirstName ] = useState('');
@@ -43,7 +42,6 @@ const Register = () => {
     {value:'Torres', label: 'Torres'}
   ];
 
-
   // Business categories
   const categories = [
     {value:'Construction', label: 'Construction'},
@@ -55,6 +53,7 @@ const Register = () => {
     {value:'Others', label: 'Others'}
   ];
 
+  // Register business handler
   const registerBusiness = () => {
     dispatch({
       type: 'REGISTER_BUSINESS',
@@ -63,10 +62,10 @@ const Register = () => {
         password: password,
         businessName: businessName,
         businessCategory: businessCategory,
-        contactNumber: contactNo,
-        streetNumber: stNo,
-        streetName: stName,
-        barangay: brgy
+        contactNumber: contactNumber,
+        streetNumber: streetNumber,
+        streetName: streetName,
+        barangay: barangay
     }});
   };
 
@@ -76,9 +75,8 @@ const Register = () => {
       <button>Register your business</button>
       <button>Sign up as user</button>
 
-
       {/* Register your business */}
-      <div className="Register-business-container">
+      <div className='Register-business-container'>
         <form onSubmit={(e) => {
             e.preventDefault();
             registerBusiness();
@@ -130,7 +128,7 @@ const Register = () => {
           <input
             required
             type='tel'
-            value={contactNo}
+            value={contactNumber}
             onChange={(e) => setContactNo(e.target.value)}
           ></input>
 
@@ -138,8 +136,8 @@ const Register = () => {
           <input
             required
             type='text'
-            placeholder='ex. 51 Pico Avenue'
-            value={stNo}
+            placeholder='ex. 123'
+            value={streetNumber}
             onChange={(e) => setStreetNo(e.target.value)}
           ></input>
 
@@ -147,14 +145,14 @@ const Register = () => {
           <input
             required
             type='text'
-            placeholder='ex. 51 Pico Avenue'
-            value={stName}
+            placeholder='ex. Pico Avenue'
+            value={streetName}
             onChange={(e) => setStreetName(e.target.value)}
           ></input>
 
           <label>Barangay:</label>
           <select
-            defaultValue={brgy}
+            defaultValue={barangay}
             onChange={(e) => setBarangay(e.target.value)}
           >
             <option style={{ textAlign: 'center' }} disabled>
@@ -173,10 +171,9 @@ const Register = () => {
         </form>
       </div>
 
-      <div>
+      <div className='Register-user-container'>
         
       </div>
-
 
     </div>
   )

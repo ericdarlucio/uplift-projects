@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <div>
       <Header/>
-      Hero
+      Homepage
     </div>
   )
 };
