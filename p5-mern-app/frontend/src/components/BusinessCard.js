@@ -18,7 +18,7 @@ const BusinessCard = ( {business} ) => {
   const clientInStorage = localStorage.getItem('userId');
   // console.log(clientInStorage, business._id);
   const photoLength = business.photos.length;
-  console.log(business.photos[0]);
+  // console.log(business.photos[0]);
 
   return (
     <div className="BusinessCard-container">
@@ -28,7 +28,7 @@ const BusinessCard = ( {business} ) => {
         { photoLength === 0 ?
           <img className='Login-image' src={require('../images/image-placeholder.png')} alt='image placeholder'></img> :
           <img className='Login-image' src={`${business.photos[0]}`} alt='image placeholder'></img>
-      }
+        }
       </div>
 
       <div className="BusinessName-container">
