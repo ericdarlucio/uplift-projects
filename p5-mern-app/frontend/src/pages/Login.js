@@ -31,7 +31,7 @@ const Login = () => {
 				console.log(result);
 				// We will use localStorage to store User details
 				localStorage.setItem('userId', result.data.id);
-
+        alert(result.data.status);
 				setLogin(true);
 				navigate('/business-list');
 			})
