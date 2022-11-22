@@ -14,9 +14,9 @@ const Login = () => {
 	const [password, setPassword] = useState('');
 	const [login, setLogin] = useState(false);
 
-	const loginAuthentication = () => {
+	const loginAuthentication = (e) => {
 		// prevent the form from refreshing the whole page
-		// e.preventDefault();
+		e.preventDefault();
 		// make a popup alert showing the 'submitted' text
 		// set configurations
 		const configuration = {
@@ -69,12 +69,14 @@ const Login = () => {
 				
 				<div className='Login-left'>
 
-					<form>
+					<form
+						onSubmit={(e)=>loginAuthentication(e)}
+					>
 						<label className='Login-header'>Login</label>
 						<label className='Login-navigate'>Doesn't have an account yet? <Link to='/register'>Signup</Link></label>
 						<label>Email</label>
 						<input
-							type='text'
+							type='email'
 							value={email}
 							required
 							onChange={(e) => setEmail(e.target.value)}
@@ -89,10 +91,7 @@ const Login = () => {
 						></input>
 
 						<button
-							type='button'
-							onClick={() => {
-								loginAuthentication();
-							}}
+							type='submit'
 						>
 							Login
 						</button>

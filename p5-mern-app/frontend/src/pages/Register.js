@@ -54,9 +54,9 @@ const Register = () => {
 		{ value: 'Others', label: 'Others' },
 	];
 
-	const registerBusiness = () => {
+	const registerBusiness = (e) => {
 		// prevent the form from refreshing the whole page
-		// e.preventDefault();
+		e.preventDefault();
 		// make a popup alert showing the 'submitted' text
 		// set configurations
     dispatch({
@@ -123,13 +123,15 @@ const Register = () => {
 
 			{/* Register your business */}
 			<div className='Register-business-container'>
-				<form>
+				<form
+					onSubmit={(e)=>registerBusiness(e)}
+				>
 					<label className='Register-header'>Register</label>
 					<label className='Register-description'>Register your business. It's free and only takes a minute</label>
 					<label>Email</label>
 					<input
 						required
-						type='text'
+						type='email'
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
 					></input>
@@ -216,10 +218,7 @@ const Register = () => {
 					<br></br>
 
 					<button
-						type='button'
-						onClick={() => {
-							registerBusiness();
-						}}
+						type='submit'
 					>
 						Register Now
 					</button>
