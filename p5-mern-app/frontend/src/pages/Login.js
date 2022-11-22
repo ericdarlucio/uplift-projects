@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router';
 import axios from 'axios';
 import './Login.css';
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 	const navigate = useNavigate();
@@ -65,36 +66,44 @@ const Login = () => {
 
 			{/* Login form */}
 			<div className='Login-form-container'>
+				
+				<div className='Login-left'>
 
-				<div className='Login-cartoon'>
+					<form>
+						<label className='Login-header'>Login</label>
+						<label className='Login-navigate'>Doesn't have an account yet? <Link to='/register'>Signup</Link></label>
+						<label>Email</label>
+						<input
+							type='text'
+							value={email}
+							required
+							onChange={(e) => setEmail(e.target.value)}
+						></input>
+						<label>Password</label>
+						<input
+							type='password'
+							value={password}
+							autoComplete='on'
+							required
+							onChange={(e) => setPassword(e.target.value)}
+						></input>
+
+						<button
+							type='button'
+							onClick={() => {
+								loginAuthentication();
+							}}
+						>
+							Login
+						</button>
+					</form>
 				</div>
 
-				<form>
-					<label>Username:</label>
-					<input
-						type='text'
-						value={email}
-						required
-						onChange={(e) => setEmail(e.target.value)}
-					></input>
-					<label>Password:</label>
-					<input
-						type='password'
-						value={password}
-						autoComplete='on'
-						required
-						onChange={(e) => setPassword(e.target.value)}
-					></input>
+				<div className='Login-right'>
+					<p>Good to see you again!</p>
+					<img className='Login-image' src={require('../images/login-cartoon.png')} alt='login cartoon'></img>
+				</div>
 
-					<button
-						type='button'
-						onClick={() => {
-							loginAuthentication();
-						}}
-					>
-						Login
-					</button>
-				</form>
 			</div>
 
 			{/* Footer */}
