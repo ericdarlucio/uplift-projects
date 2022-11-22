@@ -1,4 +1,5 @@
 .Register-container {
+  height: 100vh;
   background-image: url('../images/register-login.png');
   display: flex;
   flex-direction: column;

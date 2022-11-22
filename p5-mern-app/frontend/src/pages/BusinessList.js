@@ -13,6 +13,7 @@ const BusinessList = () => {
       <Header/>
 
       <div className="BusinessListCard-container">
+        <h1>Businesses/Services in Mapandan</h1>
         {businesses.map(business => {
           return (
             <BusinessCard key={business._id} business={business}/>

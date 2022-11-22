@@ -7,3 +7,7 @@
 .BusinessListCard-container {
   align-self: center;
 }
+
+.BusinessList-container h1 {
+  text-align: center;
+}
