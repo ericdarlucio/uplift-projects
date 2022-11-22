@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
+import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
 	const navigate = useNavigate();
@@ -115,12 +117,16 @@ const Register = () => {
 
 	return (
 		<div className='Register-container'>
+
+			{/* Header */}
 			<Header />
 
 			{/* Register your business */}
 			<div className='Register-business-container'>
 				<form>
-					<label>Email:</label>
+					<label className='Register-header'>Register</label>
+					<label className='Register-description'>Register your business. It's free and only takes a minute</label>
+					<label>Email</label>
 					<input
 						required
 						type='text'
@@ -128,7 +134,7 @@ const Register = () => {
 						onChange={(e) => setEmail(e.target.value)}
 					></input>
 
-					<label>Password:</label>
+					<label>Password</label>
 					<input
 						required
 						type='password'
@@ -137,7 +143,7 @@ const Register = () => {
 						onChange={(e) => setPassword(e.target.value)}
 					></input>
 
-					<label>Business Name:</label>
+					<label>Business Name</label>
 					<input
 						required
 						type='text'
@@ -145,8 +151,9 @@ const Register = () => {
 						onChange={(e) => setBusinessName(e.target.value)}
 					></input>
 
-					<label>Business Category:</label>
+					<label>Business Category</label>
 					<select
+						required
 						defaultValue={businessCategory}
 						onChange={(e) => setBusinessCategory(e.target.value)}
 					>
@@ -162,7 +169,7 @@ const Register = () => {
 						})}
 					</select>
 
-					<label>Contact No.:</label>
+					<label>Contact No</label>
 					<input
 						required
 						type='tel'
@@ -170,7 +177,7 @@ const Register = () => {
 						onChange={(e) => setContactNo(e.target.value)}
 					></input>
 
-					<label>Street No.:</label>
+					<label>Street No</label>
 					<input
 						required
 						type='text'
@@ -179,7 +186,7 @@ const Register = () => {
 						onChange={(e) => setStreetNo(e.target.value)}
 					></input>
 
-					<label>Street Name:</label>
+					<label>Street Name</label>
 					<input
 						required
 						type='text'
@@ -188,8 +195,9 @@ const Register = () => {
 						onChange={(e) => setStreetName(e.target.value)}
 					></input>
 
-					<label>Barangay:</label>
+					<label>Barangay</label>
 					<select
+						required
 						defaultValue={barangay}
 						onChange={(e) => setBarangay(e.target.value)}
 					>
@@ -213,12 +221,16 @@ const Register = () => {
 							registerBusiness();
 						}}
 					>
-						Register
+						Register Now
 					</button>
 				</form>
+
+				<p>Already have an account? <Link to='/login'>Login</Link></p>
+
+
 			</div>
 
-			<div className='Register-user-container'></div>
+			<Footer/>
 		</div>
 	);
 };
