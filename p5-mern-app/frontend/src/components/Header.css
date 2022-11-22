@@ -9,5 +9,27 @@
 .Header-right {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 10px;
+}
+
+.Header-image {
+  width: auto;
+  height: 30px;
+}
+
+.Header-login {
+  background-color: #111;
+  color: #eee;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.Header-register {
+  background-color: #eee;
+  color: #d20000;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-color: #d20000;
 }
