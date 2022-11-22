@@ -9,7 +9,7 @@ const BusinessProfile = () => {
 	const profile = location.state.business;
 
 	const clientInStorage = localStorage.getItem('userId');
-  console.log(clientInStorage);
+  console.log(clientInStorage, profile._id);
 
 	const [email, setEmail] = useState(profile.email);
 	const [streetName, setStreetName] = useState(profile.streetName);
@@ -52,8 +52,7 @@ const BusinessProfile = () => {
 
 			{showForm && (
 				<form
-					onSubmit={(e) => {
-						e.preventDefault();
+					onSubmit={() => {
 						dispatch({
 							type: 'UPDATE_BUSINESS',
 							payload: {
@@ -127,7 +126,8 @@ const BusinessProfile = () => {
 						onChange={(e) => setPhotos(e.target.value)}
 					></input>
 
-					<button type='submit'>Save</button>
+					<button type='submit'
+					>Save</button>
 				</form>
 			)}
 

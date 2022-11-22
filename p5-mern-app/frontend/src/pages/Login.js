@@ -31,7 +31,7 @@ const Login = () => {
 		// make the API call
 		axios(configuration)
 			.then((result) => {
-				console.log(result);
+				// console.log(result);
 				// We will use localStorage to store User details
 				localStorage.setItem('userId', result.data.id);
         alert(result.data.status);
