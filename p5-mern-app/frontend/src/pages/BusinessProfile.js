@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useLocation } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
+import axios from 'axios';
+
 
 const BusinessProfile = () => {
-	const dispatch = useDispatch();
+	const navigate = useNavigate();
+	// const dispatch = useDispatch();
 	const location = useLocation();
 	const profile = location.state.business;
 
@@ -21,8 +25,19 @@ const BusinessProfile = () => {
 	const [photos, setPhotos] = useState(profile.photos);
 	const [reviews, setReviews] = useState(profile.reviews);
 	const [showForm, setShowForm] = useState(false);
+	const [login, setLogin] = useState(false);
+	
+	const dispatch = useDispatch();
 
 	// console.log(photos);
+
+	 // Delete handler
+	 const deleteBusiness = () => {
+    const answer = window.confirm("Are you sure you want to delete this?");
+    if (answer) {
+      dispatch( {type: 'DELETE_BUSINESS', payload: {_id: profile._id}});
+    }
+  };
 
 	// Business categories
 	const categories = [
@@ -35,6 +50,38 @@ const BusinessProfile = () => {
 		{ value: 'Others', label: 'Others' },
 	];
 
+	const updateBusiness = (e) => {
+		// prevent the form from refreshing the whole page
+		e.preventDefault();
+		// make a popup alert showing the 'submitted' text
+		// set configurations
+
+		const configuration = {
+			method: 'put',
+			url: `http://localhost:8080/api/v1/businesses/${profile._id}`,
+			data: {
+				businessName,
+				businessCategory,
+				contactNumber,
+				streetNumber,
+				streetName,
+				barangay,
+				photos
+			},
+		};
+
+		// make the API call
+		axios(configuration)
+			.then((result) => {
+				alert(result.data.status);
+				setLogin(true);
+				navigate('/business-list');
+				window.location.reload(false);
+			}).catch((error) => {
+				alert(error.response.data.status);
+			});
+	};
+
 	return (
 		<div>
 			<Header />
@@ -43,32 +90,37 @@ const BusinessProfile = () => {
 						<button>Logout</button>
 			}
 
+			{ profile._id === clientInStorage && 
+        <button onClick={() => { deleteBusiness() }}>Delete</button>
+			}
+
 			<div>
-				<p>{businessName}</p>
-				<p>{contactNumber}</p>
-				<p>{email}</p>
-				<p>{streetNumber} {streetName}, {barangay}</p>
+				<p>{profile.businessName}</p>
+				<p>{profile.contactNumber}</p>
+				<p>{profile.email}</p>
+				<p>{profile.streetNumber} {profile.streetName}, {profile.barangay}</p>
 			</div>
 
 			{showForm && (
 				<form
-					onSubmit={() => {
-						dispatch({
-							type: 'UPDATE_BUSINESS',
-							payload: {
-								_id: profile._id,
-								business: {
-									businessName: businessName,
-									businessCategory: businessCategory,
-									contactNumber: contactNumber,
-									streetNumber: streetNumber,
-									streetName: streetName,
-									barangay: barangay,
-									photos: photos
-								}
-							},
-						});
-					}}
+					onSubmit={(e)=>updateBusiness(e)}
+
+						// dispatch({
+						// 	type: 'UPDATE_BUSINESS',
+						// 	payload: {
+						// 		_id: profile._id,
+						// 		business: {
+						// 			businessName: businessName,
+						// 			businessCategory: businessCategory,
+						// 			contactNumber: contactNumber,
+						// 			streetNumber: streetNumber,
+						// 			streetName: streetName,
+						// 			barangay: barangay,
+						// 			photos: photos
+						// 		}
+						// 	},
+						// });
+					// }}
 				>
 
 					<input
@@ -126,15 +178,20 @@ const BusinessProfile = () => {
 						onChange={(e) => setPhotos(e.target.value)}
 					></input>
 
-					<button type='submit'
+					<button 
+						type='submit'
 					>Save</button>
 				</form>
 			)}
 
 			{ profile._id === clientInStorage && 
 						<button onClick={() => setShowForm(!showForm)}>Edit</button>
-			}
+					}
+			
+			<Footer/>
+
 		</div>
+
 	);
 };
 

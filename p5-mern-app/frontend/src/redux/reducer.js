@@ -28,20 +28,20 @@ const reducer = ( state = initialState, action ) => {
         businesses: [ ...state.businesses, registerCredentials] 
       });
 
-    case 'UPDATE_BUSINESS':
+    // case 'UPDATE_BUSINESS':
 
-      const updateCredentials = action.payload.business;
-      const updateId = action.payload._id;
+    //   const updateCredentials = action.payload.business;
+    //   const updateId = action.payload._id;
 
-      // console.log(updateCredentials);
+    //   console.log(updateCredentials);
 
-      // Backend
-      axios.put(`http://localhost:8080/api/v1/businesses/${updateId}`, updateCredentials).then(result => {
-        alert(result.data.status);
-      })
+    //   // Backend
+    //   axios.put(`http://localhost:8080/api/v1/businesses/${updateId}`, updateCredentials).then(result => {
+    //     alert(result.data.status);
+    //   })
 
-      //Frontend
-      return state;
+    //   //Frontend
+    //   return state;
 
     case 'DELETE_BUSINESS':
 

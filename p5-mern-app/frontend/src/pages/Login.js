@@ -37,6 +37,7 @@ const Login = () => {
         alert(result.data.status);
 				setLogin(true);
 				navigate('/business-list');
+				window.location.reload(false);
 			})
 			.catch((error) => {
         alert(error.response.data.status);

@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import { useSelector } from "react-redux";
 import BusinessCard from "../components/BusinessCard";
+import Footer from '../components/Footer';
 
 const BusinessList = () => {
 
@@ -9,12 +10,14 @@ const BusinessList = () => {
   return (
     <div>
       <Header/>
-      <hr></hr>
+
       {businesses.map(business => {
         return (
           <BusinessCard key={business._id} business={business}/>
         )
       })}
+
+      <Footer/>
       
     </div>
   )

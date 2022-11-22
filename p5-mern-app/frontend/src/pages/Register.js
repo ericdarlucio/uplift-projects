@@ -93,6 +93,7 @@ const Register = () => {
 				alert(result.data.status);
 				setLogin(true);
 				navigate('/login');
+				window.location.reload(false);
 			})
 			.catch((error) => {
 				alert(error.response.data.status);
