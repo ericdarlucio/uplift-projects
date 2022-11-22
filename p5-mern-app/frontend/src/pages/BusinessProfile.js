@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import axios from 'axios';
+import './BusinessProfile.css'
 
 
 const BusinessProfile = () => {
@@ -13,7 +14,7 @@ const BusinessProfile = () => {
 	const profile = location.state.business;
 
 	const clientInStorage = localStorage.getItem('userId');
-  console.log(clientInStorage, profile._id);
+  // console.log(clientInStorage, profile._id);
 
 	const [email, setEmail] = useState(profile.email);
 	const [streetName, setStreetName] = useState(profile.streetName);
@@ -29,13 +30,17 @@ const BusinessProfile = () => {
 	
 	const dispatch = useDispatch();
 
-	// console.log(photos);
+	const photoLength = profile.photos.length;
+	const reviewLength = profile.reviews.length;
 
 	 // Delete handler
 	 const deleteBusiness = () => {
     const answer = window.confirm("Are you sure you want to delete this?");
     if (answer) {
       dispatch( {type: 'DELETE_BUSINESS', payload: {_id: profile._id}});
+			window.localStorage.clear();
+			navigate('/business-list');
+			window.location.reload(false);
     }
   };
 
@@ -83,23 +88,57 @@ const BusinessProfile = () => {
 	};
 
 	return (
-		<div>
+		<div className='BusinessProfile-container'>
 			<Header />
 
-			{ profile._id === clientInStorage && 
-						<button>Logout</button>
-			}
+			<div className='BusinessProfile-content'>
 
-			{ profile._id === clientInStorage && 
-        <button onClick={() => { deleteBusiness() }}>Delete</button>
-			}
+				<div className='BusinessProfile-top'>
 
-			<div>
-				<p>{profile.businessName}</p>
-				<p>{profile.contactNumber}</p>
-				<p>{profile.email}</p>
-				<p>{profile.streetNumber} {profile.streetName}, {profile.barangay}</p>
+					<div className='BusinessProfile-top-right'>
+						<h1>{profile.businessName}</h1>
+						<small><em>{profile.businessCategory}</em></small>
+						<br></br>
+						<small>⭐⭐⭐⭐⭐</small>
+					</div>
+					
+					<div className='BusinessProfile-top-left'>
+						<p>☎️ {profile.contactNumber} </p>
+						<p>📧 {profile.email} </p>
+						<p>🗺️ {profile.streetNumber} {profile.streetName}, {profile.barangay} </p>
+						<p className='BusinessProfile-review'>⭐ Write a review </p>
+					</div>
+
+
+				</div>
+
+				<div className='BusinessProfile-middle'>
+					<h1>Gallery</h1>
+					<hr></hr>
+					{ photoLength === 0 ?
+						<img className='BusinessProfile-image' src={require('../images/no-image.png')} alt='No photos'></img> :
+						<img className='BusinessProfile-image' src={`${photos[0]}`} alt='Gallery'></img>
+        	}
+				</div>
+
+				<div className='BusinessProfile-bottom'>
+					<h1>Reviews</h1>
+					<hr></hr>
+					{ reviewLength === 0 ?
+						<p>No reviews available</p> :
+						<p>{profile.reviews[0]}</p>
+        	}
+
+				</div>
+
 			</div>
+
+			{ profile._id === clientInStorage && 
+				<>
+					<button onClick={() => setShowForm(!showForm)}>Edit</button>
+					<button onClick={() => { deleteBusiness() }}>Delete</button>
+				</>
+			}
 
 			{showForm && (
 				<form
@@ -184,9 +223,7 @@ const BusinessProfile = () => {
 				</form>
 			)}
 
-			{ profile._id === clientInStorage && 
-						<button onClick={() => setShowForm(!showForm)}>Edit</button>
-					}
+			
 			
 			<Footer/>
 

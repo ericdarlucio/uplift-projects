@@ -1,0 +1,51 @@
+.BusinessProfile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.BusinessProfile-content {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 700px;
+  height: fit-content;
+  padding: 30px;
+}
+
+.BusinessProfile-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;  
+  width: 100%;
+  height: fit-content;
+  gap: 30px;
+}
+
+.BusinessProfile-top-left p {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px;
+  margin: 5px 20px;
+}
+
+.BusinessProfile-top-left {
+  text-align: right;
+}
+
+.BusinessProfile-top-right h1 {
+  margin: 0px;
+}
+
+.BusinessProfile-middle {
+  display: flex;
+  flex-direction: column;
+}
+
+.BusinessProfile-image {
+  align-self: center;
+  width: 300px;
+  height: auto;
+}
