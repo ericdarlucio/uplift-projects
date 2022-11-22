@@ -18,9 +18,9 @@ const reducer = ( state = initialState, action ) => {
       const registerCredentials = action.payload;
 
       // Backend
-      axios.post('http://localhost:8080/api/v1/businesses/register', registerCredentials).then(result => {
-        alert(result.data.status);
-      });
+      // axios.post('http://localhost:8080/api/v1/businesses/register', registerCredentials).then(result => {
+      //   alert(result.data.status);
+      // });
 
       // Frontend
       return({ 
@@ -32,6 +32,8 @@ const reducer = ( state = initialState, action ) => {
 
       const updateCredentials = action.payload.business;
       const updateId = action.payload._id;
+
+      // console.log(updateCredentials);
 
       // Backend
       axios.put(`http://localhost:8080/api/v1/businesses/${updateId}`, updateCredentials).then(result => {
@@ -56,15 +58,15 @@ const reducer = ( state = initialState, action ) => {
         businesses: state.businesses.filter( business => business._id !== action.payload._id )
       });
 
-    case 'LOGIN_BUSINESS':
+    // case 'LOGIN_BUSINESS':
 
-      const loginCredentials = action.payload;
+    //   const loginCredentials = action.payload;
 
-      axios.post('http://localhost:8080/api/v1/businesses/login', loginCredentials).then(result => {
-        alert(result.data.status);
-      })
+    //   axios.post('http://localhost:8080/api/v1/businesses/login', loginCredentials).then(result => {
+    //     alert(result.data.status);
+    //   })
 
-      return state;
+    //   return state;
 
 
     default:

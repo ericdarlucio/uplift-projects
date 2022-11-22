@@ -13,6 +13,9 @@ const BusinessCard = ( {business} ) => {
     }
   };
 
+  const clientInStorage = localStorage.getItem('userId');
+  console.log(clientInStorage)
+
 
   return (
     <div>

@@ -16,7 +16,7 @@ router.post('/register', async (request, response) => {
 	const checkEmail = await Business.findOne({email: request.body.email});
 
   if (checkEmail){
-    return response.send({ status: 'Email already used. Use a different email'});
+    return response.status(404).send({ status: 'Email already used. Use a different email'});
   } else {
     newBusiness.save().then( result => {
       response.status(201).send({ status: 'New business has been registered'});
@@ -28,7 +28,7 @@ router.post('/register', async (request, response) => {
 router.post('/login', async (request, response) => {
 	const result = await Business.findOne({ email: request.body.email });
 	if (result === null) {
-		return response.send({
+		return response.status(404).send({
 			status: 'Invalid email or password',
 		});
 	} else {
@@ -39,7 +39,7 @@ router.post('/login', async (request, response) => {
 					id: result._id,
 				});
 			} else {
-				return response.send({
+				return response.status(404).send({
 					status: 'Invalid email or password',
 				});
 			}

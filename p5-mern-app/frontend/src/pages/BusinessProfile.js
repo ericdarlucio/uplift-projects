@@ -19,6 +19,8 @@ const BusinessProfile = () => {
 	const [reviews, setReviews] = useState(profile.reviews);
 	const [showForm, setShowForm] = useState(false);
 
+	// console.log(photos);
+
 	// Business categories
 	const categories = [
 		{ value: 'Construction', label: 'Construction' },
@@ -50,13 +52,43 @@ const BusinessProfile = () => {
 							payload: {
 								_id: profile._id,
 								business: {
-									streetName: streetName,
+									businessName: businessName,
 									businessCategory: businessCategory,
-								},
+									contactNumber: contactNumber,
+									streetNumber: streetNumber,
+									streetName: streetName,
+									barangay: barangay,
+									photos: photos
+								}
 							},
 						});
 					}}
 				>
+
+					<input
+						required
+						type='text'
+						placeholder='Enter your business name:'
+						defaultValue={profile.businessName}
+						onChange={(e) => setBusinessName(e.target.value)}
+					></input>
+
+					<input
+						required
+						type='text'
+						placeholder='Enter your contact number:'
+						defaultValue={profile.contactNumber}
+						onChange={(e) => setContactNo(e.target.value)}
+					></input>
+
+					<input
+						required
+						type='text'
+						placeholder='ex. 51'
+						defaultValue={profile.streetNumber}
+						onChange={(e) => setStreetNo(e.target.value)}
+					></input>
+
 					<input
 						required
 						type='text'
@@ -80,6 +112,13 @@ const BusinessProfile = () => {
 							);
 						})}
 					</select>
+
+					<input
+						type='text'
+						placeholder='ex. http://cdn.onlinewebfonts.com/svg/img_148071.png'
+						defaultValue={profile.photos}
+						onChange={(e) => setPhotos(e.target.value)}
+					></input>
 
 					<button type='submit'>Save</button>
 				</form>
