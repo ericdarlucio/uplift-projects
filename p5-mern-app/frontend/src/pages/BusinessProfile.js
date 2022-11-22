@@ -103,10 +103,10 @@ const BusinessProfile = () => {
 					</div>
 					
 					<div className='BusinessProfile-top-left'>
-						<p>☎️ {profile.contactNumber} </p>
-						<p>📧 {profile.email} </p>
-						<p>🗺️ {profile.streetNumber} {profile.streetName}, {profile.barangay} </p>
-						<p className='BusinessProfile-review'>⭐ Write a review </p>
+						<p> {profile.contactNumber} ☎️</p>
+						<p> {profile.email} 📧</p>
+						<p> {profile.streetNumber} {profile.streetName}, {profile.barangay} 🗺️</p>
+						<p className='BusinessProfile-review'> Write a review ⭐</p>
 					</div>
 
 
@@ -135,94 +135,114 @@ const BusinessProfile = () => {
 
 			{ profile._id === clientInStorage && 
 				<>
-					<button onClick={() => setShowForm(!showForm)}>Edit</button>
-					<button onClick={() => { deleteBusiness() }}>Delete</button>
+					<div className='BusinessProfile-buttons'>
+						<button className='BusinessProfile-edit' onClick={() => setShowForm(!showForm)}>Edit Profile</button>
+						<button className='BusinessProfile-delete' onClick={() => { deleteBusiness() }}>Delete Account</button>
+					</div>
 				</>
 			}
 
-			{showForm && (
-				<form
-					onSubmit={(e)=>updateBusiness(e)}
+			{
+        showForm && 
+        <div className='BusinessProfile-modal'>
+          <div className='BusinessProfile-modal-container'>
 
-						// dispatch({
-						// 	type: 'UPDATE_BUSINESS',
-						// 	payload: {
-						// 		_id: profile._id,
-						// 		business: {
-						// 			businessName: businessName,
-						// 			businessCategory: businessCategory,
-						// 			contactNumber: contactNumber,
-						// 			streetNumber: streetNumber,
-						// 			streetName: streetName,
-						// 			barangay: barangay,
-						// 			photos: photos
-						// 		}
-						// 	},
-						// });
-					// }}
-				>
+						<form
+							onSubmit={(e)=>updateBusiness(e)}
 
-					<input
-						required
-						type='text'
-						placeholder='Enter your business name:'
-						defaultValue={profile.businessName}
-						onChange={(e) => setBusinessName(e.target.value)}
-					></input>
+								// dispatch({
+								// 	type: 'UPDATE_BUSINESS',
+								// 	payload: {
+								// 		_id: profile._id,
+								// 		business: {
+								// 			businessName: businessName,
+								// 			businessCategory: businessCategory,
+								// 			contactNumber: contactNumber,
+								// 			streetNumber: streetNumber,
+								// 			streetName: streetName,
+								// 			barangay: barangay,
+								// 			photos: photos
+								// 		}
+								// 	},
+								// });
+							// }}
+						>
+							<label className='BusinessProfile-modal-header'>Update Business Info</label>
+							<label>Business Name: {profile.businessName}</label>
+							<input
+								required
+								type='text'
+								placeholder='Enter your business name:'
+								defaultValue={profile.businessName}
+								onChange={(e) => setBusinessName(e.target.value)}
+							></input>
 
-					<input
-						required
-						type='text'
-						placeholder='Enter your contact number:'
-						defaultValue={profile.contactNumber}
-						onChange={(e) => setContactNo(e.target.value)}
-					></input>
+							<label>Contact No: {profile.contactNumber}</label>	
+							<input
+								required
+								type='text'
+								placeholder='Enter your contact number:'
+								defaultValue={profile.contactNumber}
+								onChange={(e) => setContactNo(e.target.value)}
+							></input>
 
-					<input
-						required
-						type='text'
-						placeholder='ex. 51'
-						defaultValue={profile.streetNumber}
-						onChange={(e) => setStreetNo(e.target.value)}
-					></input>
+							<label>Street No: {profile.streetNumber}</label>	
+							<input
+								required
+								type='text'
+								placeholder='ex. 51'
+								defaultValue={profile.streetNumber}
+								onChange={(e) => setStreetNo(e.target.value)}
+							></input>
 
-					<input
-						required
-						type='text'
-						placeholder='ex. Pico Avenue'
-						defaultValue={profile.streetName}
-						onChange={(e) => setStreetName(e.target.value)}
-					></input>
+							<label>Street Name: {profile.streetName}</label>	
+							<input
+								required
+								type='text'
+								placeholder='ex. Pico Avenue'
+								defaultValue={profile.streetName}
+								onChange={(e) => setStreetName(e.target.value)}
+							></input>
 
-					<select
-						defaultValue={profile.businessCategory}
-						onChange={(e) => setBusinessCategory(e.target.value)}
-					>
-						<option style={{ textAlign: 'center' }} disabled>
-							---Choose business category---
-						</option>
-						{categories.map((option) => {
-							return (
-								<option key={option.value} value={option.value}>
-									{option.label}
+							<label>Business Category: {profile.businessCategory}</label>	
+							<select
+								defaultValue={profile.businessCategory}
+								onChange={(e) => setBusinessCategory(e.target.value)}
+							>
+								<option style={{ textAlign: 'center' }} disabled>
+									---Choose business category---
 								</option>
-							);
-						})}
-					</select>
+								{categories.map((option) => {
+									return (
+										<option key={option.value} value={option.value}>
+											{option.label}
+										</option>
+									);
+								})}
+							</select>
 
-					<input
-						type='text'
-						placeholder='ex. http://cdn.onlinewebfonts.com/svg/img_148071.png'
-						defaultValue={profile.photos}
-						onChange={(e) => setPhotos(e.target.value)}
-					></input>
+							<label>Photo URL: {profile.photos}</label>	
+							<input
+								type='text'
+								placeholder='ex. http://cdn.onlinewebfonts.com/svg/img_148071.png'
+								defaultValue={profile.photos}
+								onChange={(e) => setPhotos(e.target.value)}
+							></input>
 
-					<button 
-						type='submit'
-					>Save</button>
-				</form>
-			)}
+              <div className='BusinessProfile-button-container'>
+                <button
+                  type='button'
+                  onClick={() => setShowForm(!showForm) }
+                >Back</button>
+								<button 
+									type='submit'
+								>Update</button>
+              </div>
 
+            </form>
+          </div>
+        </div>
+      }
 			
 			
 			<Footer/>

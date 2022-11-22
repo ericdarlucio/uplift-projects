@@ -127,7 +127,7 @@ const Register = () => {
 				<form
 					onSubmit={(e)=>registerBusiness(e)}
 				>
-					<label className='Register-header'>Register</label>
+					<label className='Register-header'>Update Business Profile</label>
 					<label className='Register-description'>Register your business. It's free and only takes a minute</label>
 					<label>Email</label>
 					<input
