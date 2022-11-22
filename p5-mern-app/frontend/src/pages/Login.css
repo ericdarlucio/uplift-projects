@@ -1,0 +1,12 @@
+.Login-container {
+  height: 100vh;
+  background-image: url('../images/register-login.png');
+}
+
+.Login-container form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}

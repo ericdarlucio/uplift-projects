@@ -3,6 +3,7 @@ import { useState } from 'react';
 // import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
+import './Login.css';
 
 const Login = () => {
 	const navigate = useNavigate();
@@ -57,7 +58,7 @@ const Login = () => {
 	// };
 
 	return (
-		<div>
+		<div className='Login-container'>
 			<Header />
 			<div>
 				<form>

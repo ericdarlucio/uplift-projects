@@ -8,6 +8,9 @@ const BusinessProfile = () => {
 	const location = useLocation();
 	const profile = location.state.business;
 
+	const clientInStorage = localStorage.getItem('userId');
+  console.log(clientInStorage);
+
 	const [email, setEmail] = useState(profile.email);
 	const [streetName, setStreetName] = useState(profile.streetName);
 	const [businessCategory, setBusinessCategory] = useState(profile.businessCategory);
@@ -35,6 +38,10 @@ const BusinessProfile = () => {
 	return (
 		<div>
 			<Header />
+
+			{ profile._id === clientInStorage && 
+						<button>Logout</button>
+			}
 
 			<div>
 				<p>{businessName}</p>
@@ -124,7 +131,9 @@ const BusinessProfile = () => {
 				</form>
 			)}
 
-			<button onClick={() => setShowForm(!showForm)}>Edit</button>
+			{ profile._id === clientInStorage && 
+						<button onClick={() => setShowForm(!showForm)}>Edit</button>
+			}
 		</div>
 	);
 };

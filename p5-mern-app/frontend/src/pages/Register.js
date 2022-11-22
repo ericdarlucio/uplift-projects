@@ -114,7 +114,7 @@ const Register = () => {
 	// };
 
 	return (
-		<div>
+		<div className='Register-container'>
 			<Header />
 
 			{/* Register your business */}
