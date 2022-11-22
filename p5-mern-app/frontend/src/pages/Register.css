@@ -1,5 +1,4 @@
 .Register-container {
-  height: 100vh;
   background-image: url('../images/register-login.png');
   display: flex;
   flex-direction: column;
@@ -7,8 +6,11 @@
 }
 
 .Register-business-container {
+  margin: 20px;
+  align-self: center;
   border-radius: 5px;
-  margin: 100px 300px;
+  width: fit-content;
+  height: fit-content;
   padding: 10px 20px;
   background-color: #eef1ffce;
   display: flex;

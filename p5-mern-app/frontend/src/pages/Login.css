@@ -1,5 +1,4 @@
 .Login-container {
-  height: 100vh;
   background-image: url('../images/register-login.png');
   display: flex;
   flex-direction: column;
@@ -8,9 +7,11 @@
 
 .Login-form-container {
   border-radius: 5px;
-  height: 90vh;
-  margin: 100px 200px;
-  padding: 60px 30px;
+  margin: 30px;
+  align-self: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 50px 100px;
   background-color: #eef1ffce;
   display: flex;
   flex-direction: row;

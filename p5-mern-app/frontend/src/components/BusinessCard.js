@@ -34,7 +34,7 @@ const BusinessCard = ( {business} ) => {
       <div className="BusinessName-container">
         <Link className="BusinessName" to='/business-profile' state={{business}}><strong>{business.businessName}</strong></Link>
         <span><em>{business.businessCategory}</em></span>{ business._id === clientInStorage && 
-        <span>⭐</span>
+        <span>✏️</span>
 			}
       </div>
 
