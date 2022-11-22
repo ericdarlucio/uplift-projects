@@ -1,6 +1,15 @@
 .Login-container {
   height: 100vh;
   background-image: url('../images/register-login.png');
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Login-form-container {
+  background-color: antiquewhite;
+  margin: 0% 10%;
+  height: 80vh;
 }
 
 .Login-container form{
@@ -8,5 +17,4 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: transparent;
 }

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
 import './Login.css';
+import Footer from '../components/Footer';
 
 const Login = () => {
 	const navigate = useNavigate();
@@ -59,8 +60,15 @@ const Login = () => {
 
 	return (
 		<div className='Login-container'>
+			{/* Header */}
 			<Header />
-			<div>
+
+			{/* Login form */}
+			<div className='Login-form-container'>
+
+				<div className='Login-cartoon'>
+				</div>
+
 				<form>
 					<label>Username:</label>
 					<input
@@ -88,6 +96,10 @@ const Login = () => {
 					</button>
 				</form>
 			</div>
+
+			{/* Footer */}
+			<Footer/>
+
 		</div>
 	);
 };
