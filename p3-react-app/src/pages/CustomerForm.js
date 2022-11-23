@@ -76,10 +76,11 @@ const CustomerForm = () => {
 					onChange={(e) => setLastName(e.target.value)}
 				></input>
 
-        <label>Contact No.:</label>
+        <label>Mobile No.:</label>
 				<input
           required
 					type='tel'
+          pattern="[0-9]{11}"
 					value={contactNo}
 					onChange={(e) => setContactNo(e.target.value)}
 				></input>
@@ -120,7 +121,9 @@ const CustomerForm = () => {
 					onChange={(e) => setWaterOrder(e.target.value)}
 				></input>        
 
-        <button type='submit'>Place your order</button>
+        <button 
+          type='submit'
+        >Place your order</button>
 
 			</form>
 
