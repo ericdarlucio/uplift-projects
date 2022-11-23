@@ -14,7 +14,7 @@ const BusinessProfile = () => {
 	const profile = location.state.business;
 
 	const clientInStorage = localStorage.getItem('userId');
-  // console.log(clientInStorage, profile._id);
+  console.log(clientInStorage, profile);
 
 	const [email, setEmail] = useState(profile.email);
 	const [streetName, setStreetName] = useState(profile.streetName);
