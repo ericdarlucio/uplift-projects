@@ -22,7 +22,7 @@
 
 .Login-login-button {
   font-size: 14px;
-  background-color: #1025a1;
+  background-color: #222;
   color: #EFFFFD;
   border: 0px;
   border-radius: 5px;
@@ -142,4 +142,9 @@
 .Login-start-button:hover {
   cursor: pointer;
   background-color: #067fb7;
+}
+
+.Login-button-container-back {
+  color: #ffffff;
+  background-color: rgb(255, 68, 68);
 }

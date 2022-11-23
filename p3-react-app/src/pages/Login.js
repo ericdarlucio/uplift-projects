@@ -84,6 +84,10 @@ const Login = () => {
                   onClick={() => setShowForm(!showForm) }
                 >Back</button>
                 <button
+                  style={{
+                    color: "white",
+                    backgroundColor: "black"
+                  }}
                   onClick={checkCredentials}
                 >Login</button>
               </div>
