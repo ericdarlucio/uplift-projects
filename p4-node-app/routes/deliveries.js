@@ -48,7 +48,7 @@ router.post('/', (request, response) => {
   });
 });
 
-// Update delivery status, populate with orders and soft deletion
+// Update delivery status
 router.put('/:id', (request, response) => {
   const deliveryId = request.params.id;
   Delivery.updateOne(
@@ -57,6 +57,19 @@ router.put('/:id', (request, response) => {
   ).then(result => {
     if(result.modifiedCount === 1){
       response.status(200).send({ status: "Delivery has been updated" });
+    };
+  });
+});
+
+// Soft deletion
+router.put('/:id/softdelete', (request, response) => {
+  const deliveryId = request.params.id;
+  Delivery.updateOne(
+    { _id: deliveryId },
+    { $set: { deliveryStatus: 'deleted' } }
+  ).then(result => {
+    if(result.modifiedCount === 1){
+      response.status(200).send({ status: "Delivery has been removed" });
     };
   });
 });
