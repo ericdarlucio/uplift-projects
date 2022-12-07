@@ -1,0 +1,11 @@
+.Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Header-logo {
+  width: auto;
+  height: 30px;
+}

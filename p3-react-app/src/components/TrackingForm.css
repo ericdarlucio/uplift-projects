@@ -1,0 +1,54 @@
+.TrackingForm-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.TrackingForm-container form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  padding-top: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 2px solid #1025a1;
+  border-top: 0;
+}
+
+.TrackingForm-container form label {
+  font-size: 12px;
+}
+
+.TrackingForm-container form input{
+  font-size: 16px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #1025a1;
+  border-radius: 4px;
+  color: #1025a1;
+}
+
+::placeholder {
+  color: #B1B2FF;
+}
+
+.TrackingForm-container button {
+  font-size: 14px;
+  background-color: #1025a1;
+  color: #EFFFFD;
+  border: 0px;
+  border-radius: 4px;
+  padding: 11px 18px;
+  margin-bottom: 20px;
+}
+
+.TrackingForm-container img {
+  width: 200px;
+  padding: 10px 12px;
+  align-self: center;
+}
+
+.TrackingForm-container button:hover {
+  cursor: pointer;
+  background-color: #067fb7;
+}

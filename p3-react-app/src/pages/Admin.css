@@ -1,0 +1,97 @@
+.Admin-container {
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 30px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: #1025a1;
+}
+
+.Admin-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Admin-logo {
+  width: auto;
+  height: 30px;
+}
+
+.Admin-logout-button {
+  font-size: 14px;
+  background-color: #1025a1;
+  color: #EFFFFD;
+  border: 0px;
+  border-radius: 5px;
+  padding: 5px 8px;
+}
+
+.Admin-content {
+  height: 75%;
+  overflow: scroll;
+}
+
+.Admin-status-container {
+  position: sticky;
+  top: 0;
+  background-color: #EFFFFD;
+  text-align: center;
+}
+
+.Admin-status-selection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 14px;
+  gap: 5px;
+  padding: 10px 0;
+}
+
+.Admin-status-selection button {
+  font-size: 16px;
+  border: none;
+  background-color: transparent;
+  color: #1025a1;
+  cursor: pointer;
+}
+
+.Admin-cards-container {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Admin-content::-webkit-scrollbar {
+  display: none;
+}
+
+.Admin-cards-container span {
+  font-size: 14px;
+}
+
+.Admin-status-selection-active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.Admin-status-selection-inactive {
+  position: relative;
+  top: 0;
+}
+
+.Admin-logout-button:hover {
+  cursor: pointer;
+  background-color: #067fb7;
+}
+
+.Admin-status-selection-inactive:hover {
+  position: relative;
+  top: -2px;
+  transition: top ease 0.3s;
+}
