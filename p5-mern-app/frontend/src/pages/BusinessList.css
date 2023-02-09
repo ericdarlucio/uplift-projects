@@ -1,0 +1,13 @@
+.BusinessList-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.BusinessListCard-container {
+  align-self: center;
+}
+
+.BusinessList-container h1 {
+  text-align: center;
+}

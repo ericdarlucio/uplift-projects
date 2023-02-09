@@ -1,0 +1,36 @@
+.Header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  color: #25316D;
+}
+
+.Header-right {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.Header-image {
+  width: auto;
+  height: 30px;
+}
+
+.Header-login {
+  background-color: #111;
+  color: #eee;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0px 6px 20px 0px rgba(0, 0, 0, 0.19);
+}
+
+.Header-register {
+  background-color: #eee;
+  color: #d20000;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-color: #d20000;
+}

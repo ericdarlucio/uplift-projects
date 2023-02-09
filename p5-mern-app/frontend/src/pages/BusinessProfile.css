@@ -1,0 +1,171 @@
+.BusinessProfile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.BusinessProfile-content {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 700px;
+  height: fit-content;
+  padding: 30px;
+}
+
+.BusinessProfile-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;  
+  width: 100%;
+  height: fit-content;
+  gap: 30px;
+}
+
+.BusinessProfile-top-left p {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px;
+  margin: 5px 20px;
+}
+
+.BusinessProfile-top-left {
+  text-align: right;
+}
+
+.BusinessProfile-top-right h1 {
+  margin: 0px;
+}
+
+.BusinessProfile-middle {
+  display: flex;
+  flex-direction: column;
+}
+
+.BusinessProfile-image {
+  align-self: center;
+  width: 300px;
+  height: auto;
+}
+
+.BusinessProfile-buttons {
+  display: flex;
+  align-self: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.BusinessProfile-edit {
+  background-color: #008000;
+  border-color: #008000;
+  color: #eee;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0px 6px 20px 0px rgba(0, 0, 0, 0.19);
+}
+
+.BusinessProfile-delete {
+  padding: 5px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #ff0000;
+  border-radius: 5px;
+  border-color: #ff0000;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0px 6px 20px 0px rgba(0, 0, 0, 0.19);
+
+}
+
+
+/* From P3 Modal */
+
+.BusinessProfile-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.BusinessProfile-modal-container {
+  margin: 20px;
+  align-self: center;
+  border-radius: 5px;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 20px;
+  background-color: #eef1ffce;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0px 6px 20px 0px rgba(0, 0, 0, 0.19);
+}
+
+.BusinessProfile-modal-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+  padding: 60px 30px 0px;
+}
+
+.BusinessProfile-modal-container form input {
+  align-self: center;
+  padding: 5px;
+  align-self: center;
+  width: 95%;
+}
+
+.BusinessProfile-modal-container form select {
+  align-self: center;
+  padding: 5px;
+  align-self: center;
+  width: 98%;
+}
+
+.BusinessProfile-modal-container label{
+  font-size: 14px;
+  font-weight: bold;
+  color: #5F6F94;
+}
+
+.BusinessProfile-modal-container .BusinessProfile-modal-header {
+  font-size: 24px;
+  font-weight: bold;
+  color: #25316D;
+  margin-bottom: 20px;
+}
+
+.BusinessProfile-modal-container p {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 50px;
+  color: #5F6F94;
+}
+
+.BusinessProfile-button-container {
+  display: flex;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  align-self: center;
+  gap: 20px;
+}
+
+.BusinessProfile-button-container button {
+  padding: 5px 10px;
+  width: 120px;
+  background-color: #25316D;
+  border: 1px solid #B1B2FF;
+  border-radius: 4px;
+  color: #EFFFFD;
+}

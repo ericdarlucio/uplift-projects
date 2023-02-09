@@ -1,0 +1,21 @@
+.Footer {
+  font-size: 14px;
+  color: #25316D;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px;
+  padding: 0px;
+}
+
+Footer a{
+  font-size: 14px;
+  color: #25316D;
+  text-decoration: none;
+}
+
+Footer p{
+  font-size: 14px;
+  color: #25316D;
+  margin: 0px;
+}

@@ -1,0 +1,43 @@
+.BusinessCard-container {
+  display: flex;
+  flex-direction: row;
+  margin: 30px;
+  justify-content: space-evenly;
+  width: fit-content;
+  height: fit-content;
+  padding: 30px;
+  gap: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0px 6px 20px 0px rgba(0, 0, 0, 0.19);
+}
+
+.BusinessCard-container img{
+  max-width: 200px;
+  height: auto;
+}
+
+.BusinessPhoto-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  max-height: 200px;
+  overflow: hidden;
+}
+
+
+.BusinessName-container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.BusinessContact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 200px;
+}
+
+.BusinessName{
+  font-size: 30px;
+}
